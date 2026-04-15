@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>High Risk</fullName>
+        <default>false</default>
+        <label>High Risk</label>
+    </customValue>
+    <customValue>
+        <fullName>Moderate Risk</fullName>
+        <default>false</default>
+        <label>Moderate Risk</label>
+    </customValue>
+    <customValue>
+        <fullName>Low Risk</fullName>
+        <default>false</default>
+        <label>Low Risk</label>
+    </customValue>
+    <masterLabel>HighRiskModerateLow</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

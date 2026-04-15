@@ -1,0 +1,77 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;">
+<style type="text/css">body { margin: 0; padding: 0; background-color: #f4f7f6; font-family: Arial, sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+    table { border-spacing: 0; }
+    td { padding: 0; }
+    img { border: 0; }
+    .wrapper { width: 100%; table-layout: fixed; background-color: #f4f7f6; padding-bottom: 60px; }
+    .main { margin: 0 auto; width: 100%; max-width: 600px; background-color: #ffffff; font-size: 14px; color: #333333; border-spacing: 0; border-radius: 8px; overflow: hidden; }
+    .content { padding: 30px 40px; text-align: left; }
+    .content h1 { font-size: 26px; font-weight: bold; color: #00466a; margin-top: 0; margin-bottom: 20px; }
+    .content p { line-height: 1.6; margin: 0 0 20px 0; }
+    .details-box { background-color: #eaf2f5; border: 1px solid #d0e0e8; border-radius: 5px; padding: 20px; margin: 20px 0; }
+    .details-box p { margin: 0 0 10px 0; font-size: 15px; }
+    .details-box p:last-child { margin-bottom: 0; }
+    .details-box p strong { color: #00466a; }
+    .cta-button { display: inline-block; background-color: #d9662d; color: #ffffff; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; }
+    .footer { background-color: #333333; color: #bbbbbb; padding: 20px 40px; text-align: center; font-size: 12px; }
+    .footer a { color: #ffffff; text-decoration: underline; }
+    @media screen and (max-width: 600px) { 
+        .main { width: 100% !important; border-radius: 0 !important; }
+        .content { padding: 20px !important; }
+        .details-box { padding: 15px !important; }
+    }
+</style>
+<center class="wrapper">
+<table class="main" width="100%">
+	
+		<tr>
+			<td style="padding: 20px; background-color: #ffffff; text-align: center;"><a href="https://www.mainstreet.org/"><img alt="Main Street America Logo" src="https://nationalmainstreetcenter2--msadev.sandbox.my.salesforce.com/servlet/servlet.FileDownload?file=015dp000003upUL" style="max-width: 250px;" width="250" /> </a></td>
+		</tr>
+		<tr>
+			<td class="content">
+			<h1>Don't Miss Out!</h1>
+
+			<p>Dear [Member Name],</p>
+
+			<p>Your Main Street America membership is set to expire soon, and we don't want you to miss a moment of the valuable benefits and connections that come with being part of our network. Renewing today ensures your continued access to the resources that help your community thrive.</p>
+
+			<table border="0" cellpadding="0" cellspacing="0" class="details-box" width="100%">
+				
+					<tr>
+						<td>
+						<p><strong>Membership Level:</strong> [Membership Level Name]</p>
+
+						<p><strong>Expiration Date:</strong> [End Date]</p>
+						</td>
+					</tr>
+				
+			</table>
+
+			<p>Renew your commitment to building a stronger future for your community. It only takes a few minutes to ensure another year of progress and connection.</p>
+
+			<table border="0" cellpadding="0" cellspacing="0" width="100%">
+				
+					<tr>
+						<td align="center" style="padding: 10px 0;"><a class="cta-button" href="[LINK_TO_RENEWAL_PAGE]">Renew Your Membership Now</a></td>
+					</tr>
+				
+			</table>
+			</td>
+		</tr>
+		<tr>
+			<td class="footer">
+			<p style="margin: 0 0 10px 0;">Main Street America<br />
+			53 W. Jackson Blvd., Suite 350, Chicago, IL 60604</p>
+
+			<p style="margin: 0;"><a href="{{{EmailPreferenceCenter.Url}}}">Update Subscription Preferences</a> | <a href="[LINK_TO_CONTACT_US]">Contact Us</a></p>
+			</td>
+		</tr>
+	
+</table>
+</center>
+</body>
+</html>

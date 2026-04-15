@@ -1,0 +1,27 @@
+<aura:component controller="ShowActiveMembershipBannerApex" implements="force:hasRecordId,flexipage:availableForRecordHome" access="global">
+    <aura:attribute name="membership" type="Object"/>
+    <aura:attribute name="message" type="String"/>
+    <aura:attribute name="bannerClass" type="String"/>
+    <aura:attribute name="iconName" type="String"/>
+    <aura:attribute name="showBanner" type="Boolean" default="false"/>
+    <aura:attribute name="membershipId" type="String"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <aura:if isTrue="{!v.showBanner}">
+        <div class="slds-card slds-theme_shade">
+            <div class="{!'slds-notify slds-notify_alert ' + v.bannerClass}" role="alert">
+                <span class="slds-assistive-text">Info</span>
+                <span class="{!'slds-icon_container ' + v.iconName + ' slds-m-right_x-small'}" title="Description of icon when needed">
+                    <lightning:icon iconName="{!v.iconName}" alternativeText="icon" size="x-small"/>
+                </span>
+                <h2>
+                    {!v.message}
+                    <aura:if isTrue="{!v.bannerClass == 'slds-theme_success'}">
+                        <a href="{!'/' + v.membershipId}" target="_blank">Click here to Navigate</a>
+                    </aura:if>
+                </h2>
+            </div>
+        </div>
+    </aura:if>
+</aura:component>

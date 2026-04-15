@@ -1,0 +1,22 @@
+<html>
+ <head>
+  <title></title>
+ </head>
+ <body style="height: auto; min-height: auto;">
+  <center style="width: 100%; table-layout: fixed; background-color: #f4f7f6; padding-bottom: 60px;">
+   <table class="main" style="margin: 0 auto; width: 100%; max-width: 600px; background-color: #ffffff; font-size: 14px; color: #333333; border-spacing: 0; border-radius: 8px; overflow: hidden;" width="100%">
+    <tbody>
+     <tr>
+      <td style="padding: 20px; background-color: #ffffff; text-align: center;"><img alt="msa-logo" src="{[devName:msalogo]}" style="max-width: 1411.91px; width: 207px; height: 128px;" title="msa-logo" /></td>
+     </tr>
+     <tr>
+      <td class="content" style="padding: 30px 40px; text-align: left;"><p style="line-height: 1.6; margin: 0 0 20px 0;">Hi {{{Recipient.FirstName}}},</p> <p>Thank you for your payment. Please find your receipt attached for your records.<br /> <br /> Questions? Don't hesitate to <a href="https://mainstreet.org/about/contact-us">contact us</a>.</p></td>
+     </tr>
+     <tr>
+      <td class="footer" style="background-color: #333333; color: #bbbbbb; padding: 20px 40px; text-align: center; font-size: 12px;"><p style="line-height: 1.6; margin: 0 0 10px 0;">Main Street America<br /> 53 W. Jackson Blvd., Suite 350, Chicago, IL 60604</p> <p style="line-height: 1.6; margin: 0;"><a href="https://members.msa.preview.rygn.io/my-account/settings" style="color: #ffffff; text-decoration: underline;">Update Subscription Preferences</a> | <a href="https://mainstreet.org/about/contact-us" style="color: #ffffff; text-decoration: underline;">Contact Us</a></p></td>
+     </tr>
+    </tbody>
+   </table>
+  </center>
+ </body>
+</html>

@@ -1,0 +1,24 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;">
+<div class="container">
+<div class="header">
+<h1>Payment Confirmation</h1>
+</div>
+
+<p>Dear {{{Recipient.Name}}},</p>
+
+<p>Thank you for your recent payment for invoice.</p>
+
+<p>We are pleased to confirm that your payment has been successfully processed.</p>
+
+<div class="footer">
+<p>Best regards,<br />
+{{{Organization.Name}}}<br />
+Phone: {{{Organization.Phone}}}</p>
+</div>
+</div>
+</body>
+</html>

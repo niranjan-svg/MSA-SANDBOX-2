@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActionPlanTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionPlanTemplateItem>
+        <actionPlanTemplateItemValue>
+            <itemEntityType>FundingAwardRqmtSection</itemEntityType>
+            <name>Name</name>
+            <valueLiteral>Interim report</valueLiteral>
+        </actionPlanTemplateItemValue>
+        <actionPlanTemplateItemValue>
+            <itemEntityType>FundingAwardRqmtSection</itemEntityType>
+            <name>Status</name>
+            <valueLiteral>Not Started</valueLiteral>
+        </actionPlanTemplateItemValue>
+        <actionPlanTemplateItemValue>
+            <itemEntityType>FundingAwardRqmtSection</itemEntityType>
+            <name>ApplicationStageDefinitionId</name>
+            <valueLiteral>13bdp00000051hpAAA</valueLiteral>
+        </actionPlanTemplateItemValue>
+        <displayOrder>1</displayOrder>
+        <isRequired>true</isRequired>
+        <itemEntityType>FundingAwardRqmtSection</itemEntityType>
+        <name>Interim report</name>
+        <uniqueName>Interim_report_5e83fa34_51c5_11f0_b7cc_471c0b159603</uniqueName>
+    </actionPlanTemplateItem>
+    <isAdHocItemCreationEnabled>true</isAdHocItemCreationEnabled>
+    <name>Half yearly plan review</name>
+    <status>Final</status>
+    <targetEntityType>Account</targetEntityType>
+    <uniqueName>Half_yearly_plan_review_29e2c5b6_51c5_11f0_a03f_7f83b622eae9</uniqueName>
+</ActionPlanTemplate>

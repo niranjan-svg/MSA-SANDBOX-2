@@ -1,0 +1,174 @@
+<template>
+    <lightning-card>
+        <template if:true={steps.length}>
+            <lightning-progress-indicator current-step={currentStep}>
+                <template for:each={steps} for:item="step">
+                    <lightning-progress-step key={step.id} label={step.label}></lightning-progress-step>
+                </template>
+            </lightning-progress-indicator>
+
+            <template if:true={isStep1}>
+                <lightning-layout>
+                    <lightning-layout-item flexibility="auto" padding="around-small" class="slds-p-horizontal_small">
+                        <lightning-input label="Account Name" required value={accountDetails.accountName} data-id="accountName" data-key="accountDetails" onchange={handleFieldChange}></lightning-input>
+                        <lightning-input label="Phone" value={accountDetails.phone} data-id="phone" data-key="accountDetails" onchange={handleFieldChange}></lightning-input>
+                        <lightning-input label="Fax" value={accountDetails.fax} data-id="fax" data-key="accountDetails" onchange={handleFieldChange}></lightning-input>
+                        <lightning-input label="Website" value={accountDetails.website} data-id="website" data-key="accountDetails" onchange={handleFieldChange}></lightning-input>
+                    </lightning-layout-item>
+                    <lightning-layout-item flexibility="auto" padding="around-small" class="slds-p-horizontal_small">
+                        <lightning-input label="Type" value={addInfo.type} data-id="type" data-key="addInfo" onchange={handleFieldChange}></lightning-input>
+                        <lightning-textarea label="Description" value={addInfo.description} data-id="description" data-key="addInfo" onchange={handleFieldChange}></lightning-textarea>
+                        <lightning-input label="Billing Street" value={addInfo.billingStreet} data-id="billingStreet" data-key="addInfo" onchange={handleFieldChange}></lightning-input>
+                        <lightning-input label="Billing City" value={addInfo.billingCity} data-id="billingCity" data-key="addInfo" onchange={handleFieldChange}></lightning-input>
+                        <lightning-input label="Billing State/Province" value={addInfo.billingState} data-id="billingState" data-key="addInfo" onchange={handleFieldChange}></lightning-input>
+                        <lightning-input label="Billing Zip/Postal Code" value={addInfo.billingZip} data-id="billingZip" data-key="addInfo" onchange={handleFieldChange}></lightning-input>
+                        <lightning-input label="Billing Country" value={addInfo.billingCountry} data-id="billingCountry" data-key="addInfo" onchange={handleFieldChange}></lightning-input>
+                        <lightning-input label="Shipping Street" value={addInfo.shippingStreet} data-id="shippingStreet" data-key="addInfo" onchange={handleFieldChange}></lightning-input>
+                        <lightning-input label="Shipping City" value={addInfo.shippingCity} data-id="shippingCity" data-key="addInfo" onchange={handleFieldChange}></lightning-input>
+                        <lightning-input label="Shipping State/Province" value={addInfo.shippingState} data-id="shippingState" data-key="addInfo" onchange={handleFieldChange}></lightning-input>
+                        <lightning-input label="Shipping Zip/Postal Code" value={addInfo.shippingZip} data-id="shippingZip" data-key="addInfo" onchange={handleFieldChange}></lightning-input>
+                        <lightning-input label="Shipping Country" value={addInfo.shippingCountry} data-id="shippingCountry" data-key="addInfo" onchange={handleFieldChange}></lightning-input>
+                    </lightning-layout-item>
+                </lightning-layout>
+                <lightning-button label="Next" onclick={handleNext}></lightning-button>
+            </template>
+
+            <template if:true={isStep2}>
+                <template for:each={subMembers} for:item="subMember" for:index="index">
+                    <div class="slds-grid slds-wrap slds-p-horizontal_small" key={subMember.key}>
+                        <lightning-input label="Name" value={subMember.Name} data-id="Name" data-field="Name" data-key="subMembers" data-sub-key={index} onchange={handleFieldChange}></lightning-input>
+                        <lightning-input label="Website" value={subMember.Website} data-id="Website" data-field="Website" data-key="subMembers" data-sub-key={index} onchange={handleFieldChange}></lightning-input>
+                        <lightning-input label="Type" value={subMember.Type} data-id="Type" data-field="Type" data-key="subMembers" data-sub-key={index} onchange={handleFieldChange}></lightning-input>
+                        <lightning-textarea label="Description" value={subMember.Description} data-id="SubDescription" data-field="Description" data-key="subMembers" data-sub-key={index} onchange={handleFieldChange}></lightning-textarea>
+                        <lightning-button-icon class="slds-col slds-size_1-of-8" icon-name="utility:delete" alternative-text="Delete" data-index={index} onclick={handleDeleteSubMember}></lightning-button-icon>
+                    </div>
+                </template>
+                <lightning-button-icon icon-name="utility:add" alternative-text="Add" onclick={addSubMember}></lightning-button-icon>
+                <lightning-button label="Next" onclick={handleNext}></lightning-button>
+                <lightning-button label="Previous" onclick={handlePrevious}></lightning-button>
+            </template>
+
+            <template if:true={isStep3}>
+                <lightning-file-upload label="Upload Document" name="supportingDocuments" type="file"  onuploadfinished={handleFileUpload}/></lightning-file-upload>
+                <template if:true={uploadedFileNames.length}>
+                    <p>Uploaded Files:</p>
+                    <ul>
+                        <template for:each={uploadedFileNames} for:item="fileName" for:index="index">
+                            <li key={fileName}>{fileName}</li>
+                        </template>
+                    </ul>
+                </template>
+                <lightning-button label="Next" onclick={handleNext}></lightning-button>
+                <lightning-button label="Previous" onclick={handlePrevious}></lightning-button>
+            </template>
+
+            <template if:true={isStep4}>
+                <lightning-layout>
+                    <lightning-layout-item flexibility="auto" padding="around-small" class="slds-p-horizontal_small">
+                        <lightning-input label="Account Holder Name" value={paymentInfo.accHolderName} data-id="accHolderName" data-key="paymentInfo" onchange={handleFieldChange}></lightning-input>
+                        <lightning-input label="Type" value={paymentInfo.type} data-id="type" data-key="paymentInfo" onchange={handleFieldChange}></lightning-input>
+                        <lightning-input label="Last 4 digits of account number" value={paymentInfo.last4Digits} data-id="last4Digits" data-key="paymentInfo" onchange={handleFieldChange}></lightning-input>
+                        <lightning-input label="Digital Wallet Provider" value={paymentInfo.walletProvider} data-id="walletProvider" data-key="paymentInfo" onchange={handleFieldChange}></lightning-input>
+                    </lightning-layout-item>
+                    <lightning-layout-item flexibility="auto" padding="around-small" class="slds-p-horizontal_small">
+                        <lightning-input label="Bank Name" value={bankInfo.bankName} data-id="bankName" data-key="bankInfo" onchange={handleFieldChange}></lightning-input>
+                        <lightning-input label="Bank Code" value={bankInfo.bankCode} data-id="bankCode" data-key="bankInfo" onchange={handleFieldChange}></lightning-input>
+                        <lightning-input label="Bank Account Holder Type" value={bankInfo.accHolderType} data-id="accHolderType" data-key="bankInfo" onchange={handleFieldChange}></lightning-input>
+                        <!--<lightning-input label="Bank Account Type" value={bankInfo.accType} data-id="accType" data-key="bankInfo" onchange={handleFieldChange}></lightning-input>-->
+
+                        <lightning-combobox name="policyType"
+                        label="Type" data-id="polType"
+                        onchange={handleFieldChange}
+                        value={bankInfo.accType} 
+                        options={paymentTypeOptions}>
+                    </lightning-combobox>
+                        <lightning-input label="Bank Account Number" value={bankInfo.accNumber} data-id="accNumber" data-key="bankInfo" onchange={handleFieldChange}></lightning-input>
+                    </lightning-layout-item>
+                    <lightning-layout-item flexibility="auto" padding="around-small" class="slds-p-horizontal_small">
+                        <lightning-input label="Expiry Month" value={ccInfo.expiryMonth} data-id="expiryMonth" data-key="ccInfo" onchange={handleFieldChange}></lightning-input>
+                        <lightning-input label="Expiry Year" value={ccInfo.expiryYear} data-id="expiryYear" data-key="ccInfo" onchange={handleFieldChange}></lightning-input>
+                        <lightning-input label="Card Brand" value={ccInfo.cardBrand} data-id="cardBrand" data-key="ccInfo" onchange={handleFieldChange}></lightning-input>
+                    </lightning-layout-item>
+                    <lightning-layout-item flexibility="auto" padding="around-small" class="slds-p-horizontal_small">
+                        <lightning-input label="Payment Processor Name" value={paymentProcessInfo.processorName} data-id="processorName" data-key="paymentProcessInfo" onchange={handleFieldChange}></lightning-input>
+                        <lightning-input label="Processor Reference" value={paymentProcessInfo.processorRef} data-id="processorRef" data-key="paymentProcessInfo" onchange={handleFieldChange}></lightning-input>
+                        <lightning-input label="Gateway Name" value={paymentProcessInfo.gatewayName} data-id="gatewayName" data-key="paymentProcessInfo" onchange={handleFieldChange}></lightning-input>
+                        <lightning-input label="Gateway Reference" value={paymentProcessInfo.gatewayRef} data-id="gatewayRef" data-key="paymentProcessInfo" onchange={handleFieldChange}></lightning-input>
+                    </lightning-layout-item>
+                </lightning-layout>
+                <lightning-button label="Next" onclick={handleNext}></lightning-button>
+                <lightning-button label="Previous" onclick={handlePrevious}></lightning-button>
+            </template>
+
+            <template if:true={isStep5}>
+                <lightning-card title="Review and Confirm">
+                    <div class="slds-box slds-theme_default slds-m-around_medium">
+                        <h3 class="slds-text-heading_small">Account Details</h3>
+                        <p><strong>Account Name:</strong> {accountDetails.accountName}</p>
+                        <p><strong>Phone:</strong> {accountDetails.phone}</p>
+                        <p><strong>Fax:</strong> {accountDetails.fax}</p>
+                        <p><strong>Website:</strong> {accountDetails.website}</p>
+                        <p><strong>Type:</strong> {addInfo.type}</p>
+                        <p><strong>Description:</strong> {addInfo.description}</p>
+                        <p><strong>Billing Street:</strong> {addInfo.billingStreet}</p>
+                        <p><strong>Billing City:</strong> {addInfo.billingCity}</p>
+                        <p><strong>Billing State/Province:</strong> {addInfo.billingState}</p>
+                        <p><strong>Billing Zip/Postal Code:</strong> {addInfo.billingZip}</p>
+                        <p><strong>Billing Country:</strong> {addInfo.billingCountry}</p>
+                        <p><strong>Shipping Street:</strong> {addInfo.shippingStreet}</p>
+                        <p><strong>Shipping City:</strong> {addInfo.shippingCity}</p>
+                        <p><strong>Shipping State/Province:</strong> {addInfo.shippingState}</p>
+                        <p><strong>Shipping Zip/Postal Code:</strong> {addInfo.shippingZip}</p>
+                        <p><strong>Shipping Country:</strong> {addInfo.shippingCountry}</p>
+                    </div>
+                    <div class="slds-box slds-theme_default slds-m-around_medium">
+                        <h3 class="slds-text-heading_small">Sub Member Details</h3>
+                        <template for:each={subMembers} for:item="subMember">
+                            <div key={subMember.key}>
+                                <p><strong>Name:</strong> {subMember.Name}</p>
+                                <p><strong>Email:</strong> {subMember.Email}</p>
+                                <p><strong>Type:</strong> {subMember.Type}</p>
+                                <p><strong>Description:</strong> {subMember.Description}</p>
+                                <hr/>
+                            </div>
+                        </template>
+                    </div>
+                    <div class="slds-box slds-theme_default slds-m-around_medium">
+                        <h3 class="slds-text-heading_small">Supporting Documents</h3>
+                        <p>{uploadedFileNames}</p>
+                    </div>
+                    <div class="slds-box slds-theme_default slds-m-around_medium">
+                        <h3 class="slds-text-heading_small">Payment Info</h3>
+                        <p><strong>Account Holder Name:</strong> {paymentInfo.accHolderName}</p>
+                        <p><strong>Payment Type:</strong> {paymentInfo.type}</p>
+                        <p><strong>Last 4 digits of account number:</strong> {paymentInfo.last4Digits}</p>
+                        <p><strong>Digital Wallet Provider:</strong> {paymentInfo.walletProvider}</p>
+                    </div>
+                    <div class="slds-box slds-theme_default slds-m-around_medium">
+                        <h3 class="slds-text-heading_small">Banking Info</h3>
+                        <p><strong>Bank Name:</strong> {bankInfo.bankName}</p>
+                        <p><strong>Bank Code:</strong> {bankInfo.bankCode}</p>
+                        <p><strong>Bank Account Holder Type:</strong> {bankInfo.accHolderType}</p>
+                        <p><strong>Bank Account Type:</strong> {bankInfo.accType}</p>
+                        <p><strong>Bank Account Number:</strong> {bankInfo.accNumber}</p>
+                    </div>
+                    <div class="slds-box slds-theme_default slds-m-around_medium">
+                        <h3 class="slds-text-heading_small">Credit Card Info</h3>
+                        <p><strong>Expiry Month:</strong> {ccInfo.expiryMonth}</p>
+                        <p><strong>Expiry Year:</strong> {ccInfo.expiryYear}</p>
+                        <p><strong>Card Brand:</strong> {ccInfo.cardBrand}</p>
+                    </div>
+                    <div class="slds-box slds-theme_default slds-m-around_medium">
+                        <h3 class="slds-text-heading_small">Payment Processor Info</h3>
+                        <p><strong>Payment Processor Name:</strong> {paymentProcessInfo.processorName}</p>
+                        <p><strong>Processor Reference:</strong> {paymentProcessInfo.processorRef}</p>
+                        <p><strong>Gateway Name:</strong> {paymentProcessInfo.gatewayName}</p>
+                        <p><strong>Gateway Reference:</strong> {paymentProcessInfo.gatewayRef}</p>
+                    </div>
+                    <lightning-button label="Confirm" onclick={handleSubmit}></lightning-button>
+                    <lightning-button label="Previous" onclick={handlePrevious}></lightning-button>
+                </lightning-card>
+            </template>
+        </template>
+    </lightning-card>
+</template>

@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Individual_Donor</fullName>
+    <active>true</active>
+    <businessProcess>Individual Donor</businessProcess>
+    <label>Individual Donation</label>
+    <picklistValues>
+        <picklist>Anonymous__c</picklist>
+        <values>
+            <fullName>Donor Name %26 Amount Anonymous</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Donor Name Anonymous</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ForecastCategoryName</picklist>
+        <values>
+            <fullName>Best Case</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Commit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Omitted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pipeline</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Fund__c</picklist>
+        <values>
+            <fullName>Restricted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unrestricted</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Funding_priorities__c</picklist>
+        <values>
+            <fullName>Civic Infrastructure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Climate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Education</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Grantmaker_Type__c</picklist>
+        <values>
+            <fullName>Corporate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Foundation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Government</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>LeadSource</picklist>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Purpose__c</picklist>
+        <values>
+            <fullName>Corporate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Endowment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FY18</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Foundation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Illinois Main Streets</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Individual Giving</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Main Street America</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Main Street America Institute</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Main Street Now</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Scholarships</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sweet Aubum</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UrbanMain</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Solicitation_Method__c</picklist>
+        <values>
+            <fullName>Direct Mail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Meeting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Method</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Personal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Proposal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Special Event</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Sponsorship_Level__c</picklist>
+        <values>
+            <fullName>Gold</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Platinum</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Silver</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Tender__c</picklist>
+        <values>
+            <fullName>ACH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Check</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Credit Card%28Offline-No Charge%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Credit Card%28Online%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>E-Check%2FACH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non cash</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paid by CP-ACH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paid by CP-Check</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paid by CP-Contract</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PayPal</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>Existing Business</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Business</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Source__c</fullName>
+    <description>The origin or means by which the individual’s information or transaction was obtained.</description>
+    <label>Source</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1996 ALLIED MEMBERS</fullName>
+                <default>false</default>
+                <label>1996 ALLIED MEMBERS</label>
+            </value>
+            <value>
+                <fullName>1996 ALLIED RENEWALS</fullName>
+                <default>false</default>
+                <label>1996 ALLIED RENEWALS</label>
+            </value>
+            <value>
+                <fullName>1996 STANDARD MEMBERS</fullName>
+                <default>false</default>
+                <label>1996 STANDARD MEMBERS</label>
+            </value>
+            <value>
+                <fullName>1996 STANDARD RENEWALS</fullName>
+                <default>false</default>
+                <label>1996 STANDARD RENEWALS</label>
+            </value>
+            <value>
+                <fullName>1999 Natl Town Mtg: San Diego</fullName>
+                <default>false</default>
+                <label>1999 Natl Town Mtg: San Diego</label>
+            </value>
+            <value>
+                <fullName>2001 Main St Conf New</fullName>
+                <default>false</default>
+                <label>2001 Main St Conf New</label>
+            </value>
+            <value>
+                <fullName>Online Join</fullName>
+                <default>false</default>
+                <label>Online Join</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

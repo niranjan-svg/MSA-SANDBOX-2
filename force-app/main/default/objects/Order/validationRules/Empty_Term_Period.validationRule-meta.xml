@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Empty_Term_Period</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    TEXT(Term_Duration__c)=&quot;LIFE&quot;,
+    NOT(
+        OR(
+            ISBLANK(Term_Length__c),
+            Term_Length__c = 0
+        )
+    )
+)</errorConditionFormula>
+    <errorDisplayField>Term_Length__c</errorDisplayField>
+    <errorMessage>The Term Length should not contain any values!</errorMessage>
+</ValidationRule>

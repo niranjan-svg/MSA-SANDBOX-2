@@ -1,0 +1,36 @@
+<template>
+    <!-- Use the lightning-modal base component for the main structure -->
+    <lightning-modal-header label="Confirm Refund"></lightning-modal-header>
+    
+    <lightning-modal-body>
+        <!-- This is the content area -->
+        <div class="slds-p-around_medium">
+            <p>Are you sure you want to process this refund?</p>
+        </div>
+    </lightning-modal-body>
+
+    <lightning-modal-footer>
+        <!-- This is our custom footer with the Yes/No buttons -->
+        
+        <!-- No Button -->
+       <!--<lightning-button 
+            label="No" 
+            variant="neutral" 
+            onclick={handleNoClick}>
+        </lightning-button>--> 
+        
+        <!-- Yes Button -->
+        <lightning-button 
+            label="Yes" 
+            variant="brand" 
+            onclick={handleYesClick} 
+            disabled={isProcessing}>
+        </lightning-button>
+
+    </lightning-modal-footer>
+
+    <!-- Spinner to show while processing -->
+    <template if:true={isProcessing}>
+        <lightning-spinner alternative-text="Processing..." size="medium"></lightning-spinner>
+    </template>
+</template>

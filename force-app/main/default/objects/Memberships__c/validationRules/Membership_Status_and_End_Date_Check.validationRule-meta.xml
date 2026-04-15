@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Membership_Status_and_End_Date_Check</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    OR(
+        ISPICKVAL( Membership_Status__c , &quot;Expired&quot;),
+        ISPICKVAL( Membership_Status__c , &quot;In Grace Period&quot;)
+    ),
+    OR(
+        ISBLANK( TermEndDate__c ),
+         TermEndDate__c &gt;= TODAY()
+    )
+)</errorConditionFormula>
+    <errorMessage>The membership status cannot be set to &quot;Expired&quot; or &quot;In Grace Period&quot; because the Term End Date is still active, and the membership is currently in an active stage.</errorMessage>
+</ValidationRule>

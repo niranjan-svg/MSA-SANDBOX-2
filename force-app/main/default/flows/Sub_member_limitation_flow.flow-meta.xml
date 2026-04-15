@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Copy_1_of_Store_Count</name>
+        <label>Copy 1 of Store Count</label>
+        <locationX>974</locationX>
+        <locationY>611</locationY>
+        <assignmentItems>
+            <assignToReference>SubMemberCount</assignToReference>
+            <operator>AssignCount</operator>
+            <value>
+                <elementReference>Get_Sub_Member_records</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Copy_1_of_Check_Sub_member_limit</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Store_Count</name>
+        <label>Store Count</label>
+        <locationX>182</locationX>
+        <locationY>611</locationY>
+        <assignmentItems>
+            <assignToReference>SubMemberCount</assignToReference>
+            <operator>AssignCount</operator>
+            <value>
+                <elementReference>Get_Sub_Member_records</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Check_Sub_member_limit</targetReference>
+        </connector>
+    </assignments>
+    <customErrors>
+        <name>Copy_1_of_Show_Sub_members_limit_error</name>
+        <label>Copy 1 of Show Sub members limit error</label>
+        <locationX>842</locationX>
+        <locationY>827</locationY>
+        <customErrorMessages>
+            <errorMessage>You have reached the limit of adding {!$Record.Parent_Account__r.Membership__r.Membership_Type__r.Max_Sub_Members__c} sub members for the associated membership type ({!$Record.Parent_Account__r.Membership__r.Membership_Type__r.Name})</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <customErrors>
+        <name>Show_Sub_members_limit_error</name>
+        <label>Show Sub members limit error</label>
+        <locationX>50</locationX>
+        <locationY>827</locationY>
+        <customErrorMessages>
+            <errorMessage>You have reached the limit of adding {!$Record.Coordinating_Program__r.Membership__r.Membership_Type__r.Max_Sub_Members__c} sub members for the associated membership type {!$Record.Coordinating_Program__r.Membership__r.Membership_Type__r.Name}</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <decisions>
+        <name>Check_empty_value</name>
+        <label>Check empty value</label>
+        <locationX>380</locationX>
+        <locationY>503</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Outcome_1_of_Decision_2</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Coordinating_Program__r.Membership__r.Membership_Type__r.Max_Sub_Members__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Store_Count</targetReference>
+            </connector>
+            <label>Outcome 1 of Decision 2</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_person_account</name>
+        <label>Check person account</label>
+        <locationX>776</locationX>
+        <locationY>395</locationY>
+        <defaultConnector>
+            <targetReference>Copy_1_of_Check_empty_value</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Is_Not_person</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.IsPersonAccount</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Check_empty_value</targetReference>
+            </connector>
+            <label>Is Not person</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_Sub_member_limit</name>
+        <label>Check Sub member limit</label>
+        <locationX>182</locationX>
+        <locationY>719</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Outcome_1_of_Decision_1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>SubMemberCount</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.Coordinating_Program__r.Membership__r.Membership_Type__r.Max_Sub_Members__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Show_Sub_members_limit_error</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Outcome 1 of Decision 1</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Copy_1_of_Check_empty_value</name>
+        <label>Copy 1 of Check empty value</label>
+        <locationX>1172</locationX>
+        <locationY>503</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Copy_1_of_Outcome_1_of_Decision_2</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Parent_Account__r.Membership__r.Membership_Type__r.Max_Sub_Members__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_1_of_Store_Count</targetReference>
+            </connector>
+            <label>Copy 1 of Outcome 1 of Decision 2</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Copy_1_of_Check_Sub_member_limit</name>
+        <label>Copy 1 of Check Sub member limit</label>
+        <locationX>974</locationX>
+        <locationY>719</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Copy_1_of_Outcome_1_of_Decision_1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>SubMemberCount</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.Parent_Account__r.Membership__r.Membership_Type__r.Max_Sub_Members__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_1_of_Show_Sub_members_limit_error</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Copy 1 of Outcome 1 of Decision 1</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <interviewLabel>Sub member limitation flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Sub member limitation flow</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Sub_Member_records</name>
+        <label>Get Sub Member records</label>
+        <locationX>776</locationX>
+        <locationY>287</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_person_account</targetReference>
+        </connector>
+        <filterLogic>or</filterLogic>
+        <filters>
+            <field>Coordinating_Program__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Coordinating_Program__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Parent_Account__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Parent_Account__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Account</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>650</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Sub_Member_records</targetReference>
+        </connector>
+        <object>Account</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Draft</status>
+    <variables>
+        <name>SubMemberCount</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <scale>0</scale>
+        <value>
+            <numberValue>0.0</numberValue>
+        </value>
+    </variables>
+</Flow>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <brand>
+        <headerColor>#0070D2</headerColor>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <formFactors>Small</formFactors>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <isOmniPinnedViewEnabled>false</isOmniPinnedViewEnabled>
+    <label>Coordinating Program</label>
+    <navType>Standard</navType>
+    <tabs>standard-Lead</tabs>
+    <tabs>standard-Account</tabs>
+    <tabs>standard-Contact</tabs>
+    <tabs>standard-report</tabs>
+    <tabs>standard-Dashboard</tabs>
+    <tabs>CP_Training__c</tabs>
+    <tabs>Governance_Body_Member__c</tabs>
+    <tabs>standard-FundingOpportunity</tabs>
+    <tabs>standard-Opportunity</tabs>
+    <tabs>CP_Service_Request__c</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>Coordinating_Program_UtilityBar</utilityBar>
+</CustomApplication>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Check_If_the_Account_Is_LP</name>
+        <label>Check If the Account Is LP</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Account_Is_LP</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Billed_For_Account__r.Program_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Local Program</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Billed_For_Account__r.Program_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Sub Member</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Create_Shadow_Invoice</targetReference>
+            </connector>
+            <label>Account Is LP</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <interviewLabel>Create Shadow Invoice Record {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Create Shadow Invoice Records</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Create_Shadow_Invoice</name>
+        <label>Create Shadow Invoice</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>Bill_To_Account__c</field>
+            <value>
+                <elementReference>$Record.Billed_For_Account__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Due_Date__c</field>
+            <value>
+                <elementReference>$Record.Invoice__r.Due_Date__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Invoice_Date__c</field>
+            <value>
+                <elementReference>$Record.Invoice__r.Invoice_Date__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Original_Invoice__c</field>
+            <value>
+                <elementReference>$Record.Invoice__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Related_Order__c</field>
+            <value>
+                <elementReference>$Record.Invoice__r.Related_Order__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value>
+                <stringValue>Payment pending by CP</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Invoice__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Check_If_the_Account_Is_LP</targetReference>
+        </connector>
+        <object>Invoice_Line__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+</Flow>

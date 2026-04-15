@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <block>
+        <blockInfo>
+            <blockId>B0</blockId>
+            <joinTable>fkx</joinTable>
+        </blockInfo>
+        <columns>
+            <field>ACCOUNT.NAME</field>
+        </columns>
+        <columns>
+            <field>RECORDTYPE</field>
+        </columns>
+        <columns>
+            <field>FK_NAME</field>
+        </columns>
+        <columns>
+            <aggregateTypes>Sum</aggregateTypes>
+            <field>Account.Individual_Sub_Member_Count__c</field>
+        </columns>
+        <columns>
+            <aggregateTypes>Sum</aggregateTypes>
+            <field>Account.Organization_Sub_Member_Count__c</field>
+        </columns>
+        <format>Tabular</format>
+        <name>Accounts and Membership block 1</name>
+        <params>
+            <name>co</name>
+            <value>1</value>
+        </params>
+        <reportType>AccountList@Account.Membership__c</reportType>
+        <scope>user</scope>
+        <showGrandTotal>true</showGrandTotal>
+        <showSubTotals>true</showSubTotals>
+        <timeFrameFilter>
+            <dateColumn>DUE_DATE</dateColumn>
+            <interval>INTERVAL_CUSTOM</interval>
+        </timeFrameFilter>
+    </block>
+    <block>
+        <blockInfo>
+            <blockId>B1</blockId>
+            <joinTable>Memberships__c</joinTable>
+        </blockInfo>
+        <columns>
+            <field>Memberships__c$Name</field>
+        </columns>
+        <columns>
+            <field>Memberships__c.Membership_Transactions__r$Name</field>
+        </columns>
+        <columns>
+            <field>Memberships__c.Membership_Transactions__r.Membership_Refunds__r$Name</field>
+        </columns>
+        <columns>
+            <field>Memberships__c.Membership_Transactions__r.Membership_Refunds__r$Status__c</field>
+        </columns>
+        <format>Tabular</format>
+        <name>Membership with Accounts block 1</name>
+        <params>
+            <name>co</name>
+            <value>1</value>
+        </params>
+        <reportType>Membership_with_Accounts__c</reportType>
+        <scope>user</scope>
+        <showGrandTotal>true</showGrandTotal>
+        <showSubTotals>true</showSubTotals>
+        <timeFrameFilter>
+            <dateColumn>Memberships__c$CreatedDate</dateColumn>
+            <interval>INTERVAL_CURRENT</interval>
+        </timeFrameFilter>
+    </block>
+    <blockInfo>
+        <blockId xsi:nil="true"/>
+        <joinTable>fkx</joinTable>
+    </blockInfo>
+    <format>MultiBlock</format>
+    <name>Manual Membership Tracking</name>
+    <reportType>AccountList@Account.Membership__c</reportType>
+    <showDetails>true</showDetails>
+</Report>

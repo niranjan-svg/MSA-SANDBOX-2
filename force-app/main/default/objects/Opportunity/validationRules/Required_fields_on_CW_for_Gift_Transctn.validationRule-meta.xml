@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Required_fields_on_CW_for_Gift_Transctn</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    ISPICKVAL(StageName, &quot;Closed Won&quot;),
+    OR(
+        ISBLANK(AccountId)
+    )
+)</errorConditionFormula>
+    <errorMessage>Please fill Account, Payment Method and Awarded Amount before marking the Opportunity as Closed Won.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MembershipLevel__c</fullName>
+    <description>The tier or level of membership held by the individual.</description>
+    <label>Membership Level</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>MSA Community Staff Sub-member</fullName>
+                <default>false</default>
+                <label>MSA Community Staff Sub-member</label>
+            </value>
+            <value>
+                <fullName>ILMS Staff Sub-member</fullName>
+                <default>false</default>
+                <label>ILMS Staff Sub-member</label>
+            </value>
+            <value>
+                <fullName>CAMSA Staff Sub-member</fullName>
+                <default>false</default>
+                <label>CAMSA Staff Sub-member</label>
+            </value>
+            <value>
+                <fullName>Board Member</fullName>
+                <default>false</default>
+                <label>Board Member</label>
+            </value>
+            <value>
+                <fullName>NMSC Staff Member</fullName>
+                <default>false</default>
+                <label>NMSC Staff Member</label>
+            </value>
+            <value>
+                <fullName>Complimentary Membership</fullName>
+                <default>false</default>
+                <label>Complimentary Membership</label>
+            </value>
+            <value>
+                <fullName>ILMS Member</fullName>
+                <default>false</default>
+                <label>ILMS Member</label>
+            </value>
+            <value>
+                <fullName>CAMSA Member</fullName>
+                <default>false</default>
+                <label>CAMSA Member</label>
+            </value>
+            <value>
+                <fullName>Start-up Sub-member</fullName>
+                <default>false</default>
+                <label>Start-up Sub-member</label>
+            </value>
+            <value>
+                <fullName>Start-up Member</fullName>
+                <default>false</default>
+                <label>Start-up Member</label>
+            </value>
+            <value>
+                <fullName>Friend of Main Street</fullName>
+                <default>false</default>
+                <label>Friend of Main Street</label>
+            </value>
+            <value>
+                <fullName>Allied Member</fullName>
+                <default>false</default>
+                <label>Allied Member</label>
+            </value>
+            <value>
+                <fullName>Coordinating Program Member</fullName>
+                <default>false</default>
+                <label>Coordinating Program Member</label>
+            </value>
+            <value>
+                <fullName>Main Street America Community Member</fullName>
+                <default>false</default>
+                <label>Main Street America Community Member</label>
+            </value>
+            <value>
+                <fullName>General Member</fullName>
+                <default>false</default>
+                <label>General Member</label>
+            </value>
+            <value>
+                <fullName>Coordinating Staff Sub-member</fullName>
+                <default>false</default>
+                <label>Coordinating Staff Sub-member</label>
+            </value>
+            <value>
+                <fullName>General Staff Sub-member</fullName>
+                <default>false</default>
+                <label>General Staff Sub-member</label>
+            </value>
+            <value>
+                <fullName>Allied Staff Sub-member</fullName>
+                <default>false</default>
+                <label>Allied Staff Sub-member</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

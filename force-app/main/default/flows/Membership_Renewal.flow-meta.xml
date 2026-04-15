@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <choices>
+        <name>Allied_Member</name>
+        <choiceText>Allied Member</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Allied Member</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Board_Member</name>
+        <choiceText>Board Member</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Board Member</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Cheque</name>
+        <choiceText>Cheque</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Cheque</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Complimentary_Membership</name>
+        <choiceText>Complimentary Membership</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Complimentary Membership</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Coordinating_Program_Member</name>
+        <choiceText>Coordinating Program Member</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Coordinating Program Member</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Credit_Card</name>
+        <choiceText>Credit Card</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Credit Card</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Debit_Card</name>
+        <choiceText>Debit Card</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Debit Card</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Friend_of_Main_Street</name>
+        <choiceText>Friend of Main Street</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Friend of Main Street</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>General_Member</name>
+        <choiceText>General Member</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>General Member</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>LevelPicklist</name>
+        <choiceText>Coordinating Staff Sub-member</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Coordinating Staff Sub-member</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Main_Street_America_Community_Member</name>
+        <choiceText>Main Street America Community Member</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Main Street America Community Member</stringValue>
+        </value>
+    </choices>
+    <customProperties>
+        <name>ScreenProgressIndicator</name>
+        <value>
+            <stringValue>{&quot;location&quot;:&quot;top&quot;,&quot;type&quot;:&quot;simple&quot;}</stringValue>
+        </value>
+    </customProperties>
+    <dynamicChoiceSets>
+        <name>Membership_Level</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>MembershipLevel__c</picklistField>
+        <picklistObject>Memberships__ChangeEvent</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>MembershipTier</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>MembershipLevel__c</picklistField>
+        <picklistObject>Memberships__c</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>PicklistValues</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Type</picklistField>
+        <picklistObject>PaymentInstrument</picklistObject>
+    </dynamicChoiceSets>
+    <environments>Default</environments>
+    <interviewLabel>Membership Renewal {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Membership Renewal</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <screens>
+        <name>Membership_Renewal</name>
+        <label>Membership Renewal</label>
+        <locationX>176</locationX>
+        <locationY>134</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Payment_Methods</name>
+            <choiceReferences>PicklistValues</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Payment Method</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>Expiration_Date</name>
+            <dataType>Date</dataType>
+            <fieldText>Expiration Date</fieldText>
+            <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>Membership_Tier</name>
+            <choiceReferences>MembershipTier</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Membership Tier</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>Are_you_sure_you_want_to_renew_this_membership</name>
+            <dataType>Boolean</dataType>
+            <defaultValue>
+                <booleanValue>false</booleanValue>
+            </defaultValue>
+            <fieldText>Are you sure you want to renew this membership?</fieldText>
+            <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <nextOrFinishButtonLabel>Renew</nextOrFinishButtonLabel>
+        <pauseButtonLabel>Cancel</pauseButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Membership_Renewal</targetReference>
+        </connector>
+    </start>
+    <status>Obsolete</status>
+</Flow>

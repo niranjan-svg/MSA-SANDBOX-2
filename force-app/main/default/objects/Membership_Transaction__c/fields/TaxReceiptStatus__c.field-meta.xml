@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TaxReceiptStatus__c</fullName>
+    <description>Indicates the status of the tax receipt from predefined options.</description>
+    <label>Tax Receipt Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>To Be Sent</fullName>
+                <default>false</default>
+                <label>To Be Sent</label>
+            </value>
+            <value>
+                <fullName>Sent</fullName>
+                <default>false</default>
+                <label>Sent</label>
+            </value>
+            <value>
+                <fullName>Don&apos;t Send</fullName>
+                <default>false</default>
+                <label>Don&apos;t Send</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

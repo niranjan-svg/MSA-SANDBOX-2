@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Memberships__c$Name</field>
+    </columns>
+    <columns>
+        <field>Memberships__c$Membership_Status__c</field>
+    </columns>
+    <columns>
+        <field>Memberships__c.Accounts__r$Name</field>
+    </columns>
+    <columns>
+        <field>Memberships__c.Accounts__r.Invoices__r$Name</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Memberships__c$Membership_Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>In Grace Period</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Memberships__c$Membership_Type__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Memberships in Grace Period</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Accounts_with_Memberships_and_Invoices__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Memberships__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

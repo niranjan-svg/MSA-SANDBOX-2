@@ -1,0 +1,55 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;">
+<center style="width: 100%; table-layout: fixed; background-color: #f4f7f6; padding-bottom: 60px;">
+<table class="main" style="margin: 0 auto; width: 100%; max-width: 600px; background-color: #ffffff; font-size: 14px; color: #333333; border-spacing: 0; border-radius: 8px; overflow: hidden;" width="100%">
+	
+		<tr>
+			<td style="padding: 20px; background-color: #ffffff; text-align: center;"><a href="https://www.mainstreet.org/"><img alt="Main Street America Logo" src="https://cdn.mainstreet.org/logos/msa-logo.png" style="max-width: 200px; border: 0;" width="200" /></a></td>
+		</tr>
+		<tr>
+			<td class="content" style="padding: 30px 40px; text-align: left;">
+			<p style="line-height: 1.6; margin: 0 0 20px 0;">Hi {{{Recipient.FirstName}}},</p>
+
+			<p>Friendly reminder, your Main Street America membership expired on {{{Memberships__c.TermEndDate__c}}}, and your complimentary grace period will end in 60 days.</p>
+
+			<p>Renew today to stay part of the Main Street America Network and maintain access to:</p>
+
+			<ul>
+				<li>Member-exclusive discussion forums and networking opportunities on the <a href="https://www.members.mainstreet.org/">Member Hub</a>.</li>
+				<li>Full access to the Main Street <a href="https://mainstreet.org/resources/knowledge-hub">Knowledge Hub</a> with sample documents, articles, reports, and more from your peers and experts in the field.</li>
+				<li>Main Street Weekly, our email newsletter on new trends, stories from the field, and need-to-know information for those in the commercial district revitalization field.</li>
+				<li>Discounts on learning opportunities through <a href="https://mainstreet.org/resources/main-street-america-academy">Main Street America Academy</a> and the <a href="https://mainstreet.org/resources/main-street-now-conference">Main Street Now Conference</a>.</li>
+			</ul>
+
+			<table border="0" cellpadding="0" cellspacing="0" class="details-box" style="background-color: #eaf2f5; border: 1px solid #d0e0e8; border-radius: 5px; padding: 20px; margin: 20px 0;" width="100%">
+				
+					<tr>
+						<td>
+						<p style="line-height: 1.6; margin: 0 0 10px 0; font-size: 15px;"><strong style="color: #00466a;">Member&nbsp;ID#</strong><strong style="color: #00466a;">:</strong>&nbsp;{{{Memberships__c.Membership_Account_Id__c}}}<br />
+						<strong style="color: #00466a;">Membership Level:</strong> {{{Memberships__c.Membership_Type__c}}}<br />
+						<strong style="color: #00466a;">Expiration Date:</strong> {{{Memberships__c.TermEndDate__c}}}<br />
+						<strong style="color: #00466a;">Grace Until Date:</strong>&nbsp;{{{Memberships__c.Grace_Period_End_Date__c}}}<br />
+						<strong style="color: #00466a;">Payment Link:</strong> <a href="https://members.mainstreet.org/membership/renew">Payment Link</a><br />
+						<strong style="color: #00466a;">Amount to be Paid:</strong> {{{Memberships__c.Fee__c}}}</p>
+						</td>
+					</tr>
+				
+			</table>
+			</td>
+		</tr>
+		<tr>
+			<td class="footer" style="background-color: #333333; color: #bbbbbb; padding: 20px 40px; text-align: center; font-size: 12px;">
+			<p style="line-height: 1.6; margin: 0 0 10px 0;">Main Street America<br />
+			53 W. Jackson Blvd., Suite 350, Chicago, IL 60604</p>
+
+			<p style="line-height: 1.6; margin: 0;"><a href="https://members.msa.preview.rygn.io/my-account/settings" style="color: #ffffff; text-decoration: underline;">Update Subscription Preferences</a> | <a href="https://mainstreet.org/about/contact-us" style="color: #ffffff; text-decoration: underline;">Contact Us</a></p>
+			</td>
+		</tr>
+	
+</table>
+</center>
+</body>
+</html>

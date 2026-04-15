@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Expertise__c</fullName>
+    <label>Expertise</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Historic Preservation</fullName>
+                <default>false</default>
+                <label>Historic Preservation</label>
+            </value>
+            <value>
+                <fullName>Economic Development</fullName>
+                <default>false</default>
+                <label>Economic Development</label>
+            </value>
+            <value>
+                <fullName>Community Engagement</fullName>
+                <default>false</default>
+                <label>Community Engagement</label>
+            </value>
+            <value>
+                <fullName>Urban Planning</fullName>
+                <default>false</default>
+                <label>Urban Planning</label>
+            </value>
+            <value>
+                <fullName>Rural Development</fullName>
+                <default>false</default>
+                <label>Rural Development</label>
+            </value>
+            <value>
+                <fullName>Fundraising &amp; Finance</fullName>
+                <default>false</default>
+                <label>Fundraising &amp; Finance</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

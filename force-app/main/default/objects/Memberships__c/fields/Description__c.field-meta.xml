@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Description__c</fullName>
+    <description>A dropdown field for selecting a predefined description or category.</description>
+    <label>Description</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Main St State Coordinator Pkg</fullName>
+                <default>false</default>
+                <label>Main St State Coordinator Pkg</label>
+            </value>
+            <value>
+                <fullName>Designated Paid by CP non-def</fullName>
+                <default>false</default>
+                <label>Designated Paid by CP non-def</label>
+            </value>
+            <value>
+                <fullName>Allied Mbrs General Join/Renew</fullName>
+                <default>false</default>
+                <label>Allied Mbrs General Join/Renew</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

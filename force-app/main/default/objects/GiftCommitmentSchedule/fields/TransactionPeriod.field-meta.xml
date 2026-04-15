@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TransactionPeriod</fullName>
+    <description>The specified period related to the transaction (e.g., Monthly, Quarterly, Annually).</description>
+    <trackHistory>false</trackHistory>
+</CustomField>

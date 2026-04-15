@@ -1,0 +1,26 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;">
+<div class="container">
+<div class="header">
+<h1>Membership Cancelled</h1>
+</div>
+
+<p>Dear {{{Recipient.Name}}},</p>
+
+<p>This email is to confirm that your&nbsp;{{{Recipient.Active_Membership_Type__c}}} with {{{Recipient.Account_Name__c}}}&nbsp;with us has been successfully cancelled.&nbsp;&nbsp;</p>
+
+<p>As of today, your membership is no longer active.<br />
+<br />
+We are sorry to see you go and hope to have the opportunity to serve you again in the future.</p>
+
+<div class="footer">
+<p>Best regards,<br />
+{{{Organization.Name}}}<br />
+Phone: {{{Organization.Phone}}}</p>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Membership_Accounts</fullName>
+    <booleanFilter>(1 OR 2)</booleanFilter>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.RECORDTYPE</columns>
+    <columns>Is_Membership_Active__c</columns>
+    <columns>Coordinating_Program__c</columns>
+    <columns>Orgnanization_Email__c</columns>
+    <columns>Primary_Contact__c</columns>
+    <columns>Program_Type__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ACCOUNT.CREATED_DATE</field>
+        <operation>equals</operation>
+        <value>YESTERDAY</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.CREATED_DATE</field>
+        <operation>equals</operation>
+        <value>TODAY</value>
+    </filters>
+    <label>Membership Accounts</label>
+</ListView>

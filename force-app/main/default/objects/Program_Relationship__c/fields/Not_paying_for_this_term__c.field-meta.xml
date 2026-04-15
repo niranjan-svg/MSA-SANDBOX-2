@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Not_paying_for_this_term__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>Select this option only if the CP opts not to cover payment for the LP next term</inlineHelpText>
+    <label>Not paying for Next Term</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

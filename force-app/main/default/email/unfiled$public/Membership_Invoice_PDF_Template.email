@@ -1,0 +1,20 @@
+<messaging:emailTemplate subject="Your Invoice from Main Street America - {!relatedTo.Name}" recipientType="Contact" relatedToType="Invoice__c">
+    
+    <messaging:plainTextEmailBody >
+    Dear {!recipient.Name},
+
+    Please find your invoice attached.
+
+    Invoice Number: {!relatedTo.Name}
+    Amount Due: {!relatedTo.Amount_Due__c}
+
+    Thank you,
+    Main Street America
+    </messaging:plainTextEmailBody>
+    <messaging:attachment renderAs="PDF" filename="{!relatedTo.Name}.pdf">
+    <!-- Use apex:include to embed a full Visualforce Page -->
+    <apex:include pageName="MembershipInvoicePDF" />
+    </messaging:attachment>
+    
+
+</messaging:emailTemplate>

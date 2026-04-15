@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelationshipGraphDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <isActive>true</isActive>
+    <isTemplate>true</isTemplate>
+    <masterLabel>Account Contact Relation</masterLabel>
+    <relationshipGraphDefVersions>
+        <graphDefinition>{&quot;graph&quot;:{&quot;rootNode&quot;:{&quot;id&quot;:&quot;9d5a8453-754e-48a7-bf17-f391f04e18fa&quot;,&quot;object&quot;:{&quot;entity&quot;:&quot;AccountContactRelation&quot;},&quot;configurationType&quot;:&quot;Primary&quot;,&quot;nodeUiConfig&quot;:{&quot;label&quot;:&quot;&quot;,&quot;fieldsToDisplay&quot;:[],&quot;showFieldLabels&quot;:true,&quot;actions&quot;:{}},&quot;childRelationships&quot;:[{&quot;ManyToOne&quot;:{&quot;targetObjectNode&quot;:{&quot;sortFields&quot;:[{&quot;field&quot;:{&quot;field&quot;:&quot;CreatedDate&quot;,&quot;whichEntity&quot;:&quot;TARGET&quot;},&quot;order&quot;:&quot;DESC&quot;}],&quot;id&quot;:&quot;46f66466-0761-4f23-90af-f74bf68ac045&quot;,&quot;object&quot;:{&quot;entity&quot;:&quot;Account&quot;},&quot;configurationType&quot;:&quot;Primary&quot;,&quot;nodeUiConfig&quot;:{&quot;label&quot;:&quot;&quot;,&quot;recordActionsLabel&quot;:&quot;&quot;,&quot;fieldsToDisplay&quot;:[],&quot;showFieldLabels&quot;:true,&quot;actions&quot;:{&quot;recordActions&quot;:[]}},&quot;childRelationships&quot;:[]},&quot;relationshipUiConfig&quot;:{},&quot;sourceField&quot;:{&quot;field&quot;:&quot;AccountId&quot;,&quot;whichEntity&quot;:&quot;SOURCE&quot;}}}]},&quot;globalUiConfig&quot;:{&quot;allowRuntimeCustomizations&quot;:true}}}</graphDefinition>
+        <graphType>VerticalHierarchy</graphType>
+    </relationshipGraphDefVersions>
+</RelationshipGraphDefinition>

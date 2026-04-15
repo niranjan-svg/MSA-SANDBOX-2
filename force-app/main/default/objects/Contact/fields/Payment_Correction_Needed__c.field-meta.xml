@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Payment_Correction_Needed__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Indicates if there is an issue with the contact&apos;s payment information (e.g., incorrect bank details, expired card) that requires follow-up.</description>
+    <label>Payment Correction Needed</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

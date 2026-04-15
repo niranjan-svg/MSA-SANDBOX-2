@@ -1,0 +1,26 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;">
+<div class="container">
+<div class="header">
+<h1>Membership Terminated</h1>
+</div>
+
+<p>Dear {{{Recipient.Name}}},</p>
+
+<p>This email is to formally notify you that your membership with {{{Recipient.Account_Name__c}}}, which is expired on {{{Recipient.Active_Membership_End_Date__c}}},&nbsp;{{{Recipient.Active_Membership_Type__c}}} has not been renewed within the 90-day grace period.</p>
+
+<p>As a result, your account and all associated benefits have now been officially terminated.</p>
+
+<p>If you have already renewed your membership, please disregard this email.</p>
+
+<div class="footer">
+<p>Best regards,<br />
+{{{Organization.Name}}}<br />
+Phone: {{{Organization.Phone}}}</p>
+</div>
+</div>
+</body>
+</html>

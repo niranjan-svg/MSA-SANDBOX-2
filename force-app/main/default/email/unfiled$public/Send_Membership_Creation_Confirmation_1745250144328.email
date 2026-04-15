@@ -1,0 +1,25 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;">
+<div class="container">
+<div class="header">
+<h1>Account Creation Confirmation</h1>
+</div>
+
+<p>Dear {{{Recipient.Name}}},</p>
+
+<p>We are pleased to inform you that your account has been successfully created. Complete your signup using the link below.</p>
+<a class="button" href="{{{Account.Link}}}">Signup to get started!</a>
+
+<p>Thank you for being a valued member of our community.</p>
+
+<div class="footer">
+<p>Best regards,<br />
+{{{Organization.Name}}}<br />
+Phone: {{{Organization.Phone}}}</p>
+</div>
+</div>
+</body>
+</html>

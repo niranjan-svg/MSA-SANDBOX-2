@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Relationship_Type__c</fullName>
+    <inlineHelpText>Financially Supported: The CP pays for the LP.
+Jurisdictional: The LP pays for itself.</inlineHelpText>
+    <label>Relationship Type</label>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Pays LP Membership</fullName>
+                <default>false</default>
+                <label>Pays LP Membership</label>
+            </value>
+            <value>
+                <fullName>Jurisdictional</fullName>
+                <default>false</default>
+                <label>Jurisdictional</label>
+            </value>
+            <value>
+                <fullName>Financially Supported</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Financially Supported</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

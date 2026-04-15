@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>InActive_External_Reviewer</fullName>
+    <active>true</active>
+    <description>This prevent the inactive external reviewer to be assigned</description>
+    <errorConditionFormula>AND(
+    ISCHANGED(External_Reviewer__c),
+    NOT(ISNULL(External_Reviewer__c)),
+    External_Reviewer__r.IsActive__c = FALSE
+)</errorConditionFormula>
+    <errorMessage>You cannot assign this inactive reviewer. Please select an active external reviewer to proceed.</errorMessage>
+</ValidationRule>

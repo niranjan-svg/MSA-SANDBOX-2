@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Required_Documents_Pending__c</fullName>
+    <description>This field denotes the count of required documents still pending</description>
+    <label>Required Documents Pending</label>
+    <summaryFilterItems>
+        <field>FundingAwardRequirement.ApprovalStatus</field>
+        <operation>notEqual</operation>
+        <value>Approved</value>
+    </summaryFilterItems>
+    <summaryForeignKey>FundingAwardRequirement.FundingAwardId</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

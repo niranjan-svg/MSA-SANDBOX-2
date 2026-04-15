@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Launch_Ready_Restriction</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    ISCHANGED(Status), /* Only fire when Status is changed */
+    ISPICKVAL(Status, &quot;Launch-Ready&quot;), /* AND the new Status is &quot;Launch Ready&quot; */
+    NOT( /* AND NOT ALL of the following conditions are met (i.e., at least one is FALSE) */
+        AND(
+            ISPICKVAL(Legal_Entity_Exists__c, &quot;Yes&quot;),
+            ISPICKVAL(Staffing_Capacity__c, &quot;Full Time&quot;),
+            ISPICKVAL(Seed_Funding_Secured__c, &quot;Yes&quot;),
+            OR(
+                ISPICKVAL(Strategic_Plan_Developed__c, &quot;Yes&quot;),
+                ISPICKVAL(Strategic_Plan_Developed__c, &quot;In Progress&quot;)
+            ),
+            OR(
+                ISPICKVAL(Relationships_with_Local_Programs__c, &quot;Strong&quot;),
+                ISPICKVAL(Relationships_with_Local_Programs__c, &quot;Moderate&quot;)
+            ),
+            ISPICKVAL(Funding_Stability__c, &quot;Low Risk&quot;)
+        )
+    )
+)</errorConditionFormula>
+    <errorMessage>Please ensure the following fields are properly completed:
+Legal Entity Exists, Staffing Capacity, Seed Funding Secured, Strategic Plan Developed, Relationships with Local Programs, Funding Stability</errorMessage>
+</ValidationRule>

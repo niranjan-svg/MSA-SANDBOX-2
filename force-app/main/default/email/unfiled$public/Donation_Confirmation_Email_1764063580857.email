@@ -1,0 +1,38 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;">
+<center style="width: 100%; table-layout: fixed; background-color: #f4f7f6; padding-bottom: 60px;">
+<table class="main" style="margin: 0 auto; width: 100%; max-width: 600px; background-color: #ffffff; font-size: 14px; color: #333333; border-spacing: 0; border-radius: 8px; overflow: hidden;" width="100%">
+	
+		<tr>
+			<td style="padding: 20px; background-color: #ffffff; text-align: center;"><a href="https://www.mainstreet.org/"><img alt="Main Street America Logo" src="https://cdn.mainstreet.org/logos/msa-logo.png" style="max-width: 200px; border: 0;" width="200" /></a></td>
+		</tr>
+		<tr>
+			<td class="content" style="padding: 30px 40px; text-align: left;">
+			<p style="line-height: 1.6; margin: 0 0 20px 0;">Dear {{{Recipient.FirstName}}},</p>
+
+			<p>Thank you for your generous donation of {{{GiftTransaction.OriginalAmount}}} to Main Street America. We are so grateful for your support as we work toward advancing shared prosperity, creating resilient economies, and improving quality of life in downtowns and neighborhood commercial districts across the country. Your donation will help us continue to lead a movement that ensures everyone has access to an inclusive and resilient Main Street.</p>
+
+			<p>Thank you for your support!</p>
+
+			<p>National Main Street Center, Inc. is a U.S. 501(c)(3) tax exempt organization, EIN 46-1405965. Your gift of {{{GiftTransaction.OriginalAmount}}}&nbsp;was received on {{{GiftTransaction.TransactionDate}}}. Please retain this email as your official receipt. No goods or services have been provided in consideration of this gift.</p>
+
+
+			<p>Questions? Don't hesitate to <a href="https://mainstreet.org/about/contact-us">contact us</a>.</p>
+			</td>
+		</tr>
+		<tr>
+			<td class="footer" style="background-color: #333333; color: #bbbbbb; padding: 20px 40px; text-align: center; font-size: 12px;">
+			<p style="line-height: 1.6; margin: 0 0 10px 0;">Main Street America<br />
+			53 W. Jackson Blvd., Suite 350, Chicago, IL 60604</p>
+
+			<p style="line-height: 1.6; margin: 0;"><a href="https://members.msa.preview.rygn.io/my-account/settings" style="color: #ffffff; text-decoration: underline;">Update Subscription Preferences</a> | <a href="https://mainstreet.org/about/contact-us" style="color: #ffffff; text-decoration: underline;">Contact Us</a></p>
+			</td>
+		</tr>
+	
+</table>
+</center>
+</body>
+</html>

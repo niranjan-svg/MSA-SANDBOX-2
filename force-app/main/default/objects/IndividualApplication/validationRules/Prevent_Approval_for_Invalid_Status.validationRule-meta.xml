@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_Approval_for_Invalid_Status</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+  ISPICKVAL( Status , &quot;Accepted&quot;),
+  OR(
+    ISPICKVAL( Account.Non_Profit_Status__c, &quot;Verified - Not in Good Standing&quot;),
+    ISPICKVAL(Account.Non_Profit_Status__c, &quot;Not Verified&quot;)
+  )
+)</errorConditionFormula>
+    <errorMessage>This application cannot be approved due to the non-profit status of the related account. Please check the account for details.</errorMessage>
+</ValidationRule>

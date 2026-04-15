@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Submittable_Projects</fullName>
+    <columns>Name</columns>
+    <columns>Is_Hidden__c</columns>
+    <columns>StartDate</columns>
+    <columns>EndDate</columns>
+    <columns>ApplicationInstructions</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Submittable_Project_Id__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <label>Submittable Projects</label>
+</ListView>

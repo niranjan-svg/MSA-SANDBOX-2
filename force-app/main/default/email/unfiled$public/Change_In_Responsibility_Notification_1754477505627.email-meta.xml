@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Automatically notify a Local Program when their financial relationship with a Coordinating Program has changed.</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Change In Responsibility Notification</name>
+    <relatedEntityType>Account</relatedEntityType>
+    <style>none</style>
+    <subject>Coordinating Program stops paying for Local Program.</subject>
+    <type>custom</type>
+    <uiType>SFX</uiType>
+</EmailTemplate>

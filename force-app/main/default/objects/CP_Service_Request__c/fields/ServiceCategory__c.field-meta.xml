@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ServiceCategory__c</fullName>
+    <label>Service Category</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Strategic Planning</fullName>
+                <default>false</default>
+                <label>Strategic Planning</label>
+            </value>
+            <value>
+                <fullName>Board/Staff Support</fullName>
+                <default>false</default>
+                <label>Board/Staff Support</label>
+            </value>
+            <value>
+                <fullName>Fundraising/Finance</fullName>
+                <default>false</default>
+                <label>Fundraising/Finance</label>
+            </value>
+            <value>
+                <fullName>Marketing/Communications</fullName>
+                <default>false</default>
+                <label>Marketing/Communications</label>
+            </value>
+            <value>
+                <fullName>Accreditation Support</fullName>
+                <default>false</default>
+                <label>Accreditation Support</label>
+            </value>
+            <value>
+                <fullName>General Support</fullName>
+                <default>false</default>
+                <label>General Support</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

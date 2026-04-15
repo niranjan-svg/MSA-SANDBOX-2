@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Roster Change Membership Team</name>
+    <queueMembers>
+        <users>
+            <user>msa_ks_clientcare@kloudserv.ca</user>
+            <user>lenin.t@kloudserv.ca</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

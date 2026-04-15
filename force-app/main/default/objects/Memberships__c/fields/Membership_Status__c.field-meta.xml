@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Membership_Status__c</fullName>
+    <description>this fields indicates the application status of the membership applied</description>
+    <label>Membership Status</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Payment Pending</fullName>
+                <default>false</default>
+                <label>Payment Pending</label>
+            </value>
+            <value>
+                <fullName>Queued</fullName>
+                <default>false</default>
+                <label>Queued</label>
+            </value>
+            <value>
+                <fullName>Membership Activated</fullName>
+                <default>false</default>
+                <label>Membership Activated</label>
+            </value>
+            <value>
+                <fullName>In Grace Period</fullName>
+                <default>false</default>
+                <label>In Grace Period</label>
+            </value>
+            <value>
+                <fullName>Refunded</fullName>
+                <default>false</default>
+                <label>Refunded</label>
+            </value>
+            <value>
+                <fullName>Expired</fullName>
+                <default>false</default>
+                <label>Expired</label>
+            </value>
+            <value>
+                <fullName>Application Received</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Application Received</label>
+            </value>
+            <value>
+                <fullName>Membership Cancelled</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Membership Cancelled</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

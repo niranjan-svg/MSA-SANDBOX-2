@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Non_Profit_Status__c</fullName>
+    <description>This field denotes the Individual Applicant’s non profit status</description>
+    <label>Non Profit Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Verified - In Good Standing</fullName>
+                <default>false</default>
+                <label>Verified - In Good Standing</label>
+            </value>
+            <value>
+                <fullName>Verified - Not in Good Standing</fullName>
+                <default>false</default>
+                <label>Verified - Not in Good Standing</label>
+            </value>
+            <value>
+                <fullName>Not Verified</fullName>
+                <default>false</default>
+                <label>Not Verified</label>
+            </value>
+            <value>
+                <fullName>Verification In Progress</fullName>
+                <default>false</default>
+                <label>Verification In Progress</label>
+            </value>
+            <value>
+                <fullName>N/A (Not a Nonprofit)</fullName>
+                <default>false</default>
+                <label>N/A (Not a Nonprofit)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

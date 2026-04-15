@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Paid_By_CP__c</fullName>
+    <formula>Account.Paid_By_CP__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Is Paid By CP</label>
+    <type>Checkbox</type>
+</CustomField>

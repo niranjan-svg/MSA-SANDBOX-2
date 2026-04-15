@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fill_CP_Payment_Category</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+  ISPICKVAL( PaymentMethod__c , &quot;Paid By CP&quot;),
+  ISBLANK(TEXT( CP_Payment_Category__c ))
+)</errorConditionFormula>
+    <errorDisplayField>CP_Payment_Category__c</errorDisplayField>
+    <errorMessage>Please fill this field!</errorMessage>
+</ValidationRule>

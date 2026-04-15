@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html style="overflow-y: hidden;">
+<head>
+	<title>Welcome to Main Street America!</title>
+	<style type="text/css">@media screen and (max-width: 600px) { 
+            .main { width: 100% !important; border-radius: 0 !important; }
+            .content { padding: 20px !important; }
+            .details-box { padding: 15px !important; }
+        }
+	</style>
+</head>
+<body style="margin: 0px; padding: 0px; background-color: rgb(244, 247, 246); font-family: Arial, sans-serif; height: auto; min-height: auto;">
+<center style="width: 100%; table-layout: fixed; background-color: #f4f7f6; padding-bottom: 60px;">
+<table class="main" style="margin: 0 auto; width: 100%; max-width: 600px; background-color: #ffffff; font-size: 14px; color: #333333; border-spacing: 0; border-radius: 8px; overflow: hidden;" width="100%">
+	<tbody>
+		<tr>
+			<td style="padding: 20px; background-color: #ffffff; text-align: center;"><a href="https://www.mainstreet.org/"><img alt="Main Street America Logo" src="https://nationalmainstreetcenter2--msadev.sandbox.my.salesforce.com/servlet/servlet.FileDownload?file=015dp000003upUL" style="max-width: 250px; border: 0;" width="250" /></a></td>
+		</tr>
+		<tr>
+			<td class="content" style="padding: 30px 40px; text-align: left;">
+			<h1 style="font-size: 26px; font-weight: bold; color: #00466a; margin-top: 0; margin-bottom: 20px;">Welcome to the Network!</h1>
+
+			<p style="line-height: 1.6; margin: 0 0 20px 0;">Dear [Member Name],</p>
+
+			<p style="line-height: 1.6; margin: 0 0 20px 0;">Thank you for joining (or renewing with) Main Street America! Your membership is confirmed, and we are thrilled to have you as part of our national network of passionate advocates, dedicated volunteers, and expert practitioners.</p>
+
+			<table border="0" cellpadding="0" cellspacing="0" class="details-box" style="background-color: #eaf2f5; border: 1px solid #d0e0e8; border-radius: 5px; padding: 20px; margin: 20px 0;" width="100%">
+				<tbody>
+					<tr>
+						<td>
+						<p style="line-height: 1.6; margin: 0 0 10px 0; font-size: 15px;"><strong style="color: #00466a;">Membership Level:</strong> [Membership Level Name]</p>
+
+						<p style="line-height: 1.6; margin: 0 0 10px 0; font-size: 15px;"><strong style="color: #00466a;">Membership Term:</strong> [Start Date] - [End Date]</p>
+
+						<p style="line-height: 1.6; margin: 0 0 10px 0; font-size: 15px;"><strong style="color: #00466a;">Invoice Number:</strong> [Invoice Number]</p>
+
+						<p style="line-height: 1.6; margin: 0 0 0 0; font-size: 15px;"><strong style="color: #00466a;">Order ID:</strong> [Order ID]</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<p style="line-height: 1.6; margin: 0 0 20px 0;">You can now access your exclusive member benefits. Get started by exploring your Member Portal.</p>
+
+			<table border="0" cellpadding="0" cellspacing="0" width="100%">
+				<tbody>
+					<tr>
+						<td align="center" style="padding: 10px 0;"><a class="cta-button" href="[LINK_TO_MEMBER_PORTAL]" style="display: inline-block; background-color: #d9662d; color: #ffffff; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold;">Access Your Member Portal</a></td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+		<tr>
+			<td class="footer" style="background-color: #333333; color: #bbbbbb; padding: 20px 40px; text-align: center; font-size: 12px;">
+			<p style="line-height: 1.6; margin: 0 0 10px 0;">Main Street America<br />
+			53 W. Jackson Blvd., Suite 350, Chicago, IL 60604</p>
+
+			<p style="line-height: 1.6; margin: 0;"><a href="[LINK_TO_PREFERENCE_CENTER]" style="color: #ffffff; text-decoration: underline;">Update Subscription Preferences</a> | <a href="[LINK_TO_CONTACT_US]" style="color: #ffffff; text-decoration: underline;">Contact Us</a></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</center>
+</body>
+</html>

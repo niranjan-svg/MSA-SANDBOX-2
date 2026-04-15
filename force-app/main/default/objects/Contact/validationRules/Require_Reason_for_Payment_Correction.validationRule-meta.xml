@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Require_Reason_for_Payment_Correction</fullName>
+    <active>true</active>
+    <description>Ensures that if the &apos;Payment Correction Needed&apos; checkbox is true, the &apos;Payment Correction Reason&apos; field must be filled out before the record can be saved.</description>
+    <errorConditionFormula>AND(
+    Payment_Correction_Needed__c = TRUE,
+    ISBLANK(Payment_Correction_Reason__c)
+)</errorConditionFormula>
+    <errorMessage>You must provide a reason in the &apos;Payment Correction Reason&apos; field when the &apos;Payment Correction Needed&apos; checkbox is selected.</errorMessage>
+</ValidationRule>

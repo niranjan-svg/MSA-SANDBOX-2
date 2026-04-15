@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Program_Type__c</fullName>
+    <description>This field stores the payment details of the account</description>
+    <label>Program Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Local Program</fullName>
+                <default>false</default>
+                <label>Local Program</label>
+            </value>
+            <value>
+                <fullName>Coordinating Program</fullName>
+                <default>false</default>
+                <label>Coordinating Program</label>
+            </value>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>Sub Member</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Sub Member</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

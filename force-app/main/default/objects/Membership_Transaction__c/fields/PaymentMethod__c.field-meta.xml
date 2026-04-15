@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PaymentMethod__c</fullName>
+    <description>Specifies the method of payment from predefined options.</description>
+    <label>Tender Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Check</fullName>
+                <default>false</default>
+                <label>Check</label>
+            </value>
+            <value>
+                <fullName>Credit Card</fullName>
+                <default>false</default>
+                <label>Credit Card</label>
+            </value>
+            <value>
+                <fullName>ACH</fullName>
+                <default>false</default>
+                <label>ACH</label>
+            </value>
+            <value>
+                <fullName>Paid By CP</fullName>
+                <default>false</default>
+                <label>Paid By CP</label>
+            </value>
+            <value>
+                <fullName>Contract</fullName>
+                <default>false</default>
+                <label>Contract</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Comp</fullName>
+                <default>false</default>
+                <label>Comp</label>
+            </value>
+            <value>
+                <fullName>Non Cash</fullName>
+                <default>false</default>
+                <label>Non Cash</label>
+            </value>
+            <value>
+                <fullName>PayPal</fullName>
+                <default>false</default>
+                <label>PayPal</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

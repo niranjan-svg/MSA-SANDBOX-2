@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Origin_Category__c</fullName>
+    <description>The initial category or grouping when the individual was entered into the system.</description>
+    <label>Origin Category</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Data Entry</fullName>
+                <default>false</default>
+                <label>Data Entry</label>
+            </value>
+            <value>
+                <fullName>Standard Membership Form</fullName>
+                <default>false</default>
+                <label>Standard Membership Form</label>
+            </value>
+            <value>
+                <fullName>Sub-Membership Form</fullName>
+                <default>false</default>
+                <label>Sub-Membership Form</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

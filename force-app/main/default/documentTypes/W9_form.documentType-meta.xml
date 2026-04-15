@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DocumentType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <isActive>true</isActive>
+    <masterLabel>W9 form</masterLabel>
+    <maximumFileSize>10</maximumFileSize>
+    <maximumFileUploadCount>1</maximumFileUploadCount>
+</DocumentType>

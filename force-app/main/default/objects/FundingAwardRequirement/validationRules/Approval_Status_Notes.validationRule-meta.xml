@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Approval_Status_Notes</fullName>
+    <active>true</active>
+    <description>This verification rule works when the approval status as Corrections Needed.</description>
+    <errorConditionFormula>AND(
+  ISPICKVAL( ApprovalStatus , &quot;Corrections needed&quot;),
+  LEN(TRIM(Approval_Notes__c)) = 0
+)</errorConditionFormula>
+    <errorMessage>Approval notes are required when requesting corrections.</errorMessage>
+</ValidationRule>

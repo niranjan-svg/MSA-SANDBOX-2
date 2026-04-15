@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Submittable_Applications</fullName>
+    <columns>Name</columns>
+    <columns>Account</columns>
+    <columns>AppliedDate</columns>
+    <columns>Status</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Submittable_Submission_Id__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <label>Submittable Applications</label>
+</ListView>

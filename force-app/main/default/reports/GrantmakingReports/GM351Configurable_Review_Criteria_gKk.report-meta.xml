@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>FundingOpportunity.IndividualApplication$Account</field>
+    </columns>
+    <columns>
+        <field>FundingOpportunity.IndividualApplication$Name</field>
+    </columns>
+    <columns>
+        <field>FundingOpportunity.IndividualApplication$Feasibility__c</field>
+    </columns>
+    <columns>
+        <field>FundingOpportunity.IndividualApplication$Need__c</field>
+    </columns>
+    <columns>
+        <field>FundingOpportunity.IndividualApplication$Impact__c</field>
+    </columns>
+    <columns>
+        <field>FundingOpportunity.IndividualApplication$Involvement__c</field>
+    </columns>
+    <format>Tabular</format>
+    <name>GM-3.5.1-Configurable Review Criteria</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Funding_Opportunity_Individual_Application_Review__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>FundingOpportunity.IndividualApplication$Feasibility__c</sortColumn>
+    <sortOrder>Desc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>FundingOpportunity$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

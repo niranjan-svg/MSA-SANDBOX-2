@@ -1,0 +1,33 @@
+<template>
+    <!-- <h1>im in custom look up res </h1> -->
+    <li role="presentation" class="slds-listbox__item " onclick={selectRecord}>
+        <!-- <h2>im in custom look up res</h2> -->
+        <span class="slds-media slds-listbox__option slds-listbox__option_entity slds-listbox__option_has-meta"
+            role="option">
+            <span class="slds-media__figure">
+                <span class="slds-icon_container" title="Description of icon when needed">
+                    <lightning-icon icon-name={iconName} class="slds-icon slds-icon_small" size="small"
+                        alternative-text="icon"></lightning-icon>
+                    <span class="slds-assistive-text">Description of icon</span>
+                </span>
+            </span>
+            <span class="slds-media__body">
+                <template if:true={accountRecord}>
+                    <span class="slds-listbox__option-text slds-listbox__option-text_entity">{recordVal.Name}</span>
+                    <span class="slds-listbox__option-text" style="color:gray">{recordVal.Insured_ID__c}</span>
+                </template>
+                <template if:true={carrierRecord}>
+                    <span class="slds-listbox__option-text slds-listbox__option-text_entity">{recordVal.Name}</span>
+                    <span class="slds-listbox__option-text" style="color:gray">{recordVal.Carrier_Name__c}</span>
+                </template>
+                <template if:true={prospectRecord}>
+                    <span class="slds-listbox__option-text slds-listbox__option-text_entity">{recordVal.Name}</span>
+                    <span class="slds-listbox__option-text" style="color:gray">{recordVal.ProspectName__c}</span>
+                </template>
+                <template if:true={defaultRecord}>
+                    <span class="slds-listbox__option-text slds-listbox__option-text_entity">{recordVal.Name}</span>
+                </template>
+            </span>
+        </span>
+    </li>
+</template>

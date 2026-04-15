@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Agreement_Status__c</fullName>
+    <label>Grant Agreement Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Agreement Sent</fullName>
+                <default>false</default>
+                <label>Agreement Sent</label>
+            </value>
+            <value>
+                <fullName>Agreement Signed</fullName>
+                <default>false</default>
+                <label>Agreement Signed</label>
+            </value>
+            <value>
+                <fullName>Agreement Declined</fullName>
+                <default>false</default>
+                <label>Agreement Declined</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

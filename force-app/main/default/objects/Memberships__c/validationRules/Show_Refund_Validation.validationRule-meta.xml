@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Show_Refund_Validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+  TEXT(PRIORVALUE(Membership_Status__c)) = &quot;Refunded&quot;,
+  PRIORVALUE(Is_Active__c) = FALSE,
+  TEXT(Membership_Status__c) = &quot;Membership Activated&quot;,
+  Is_Active__c = TRUE
+)</errorConditionFormula>
+    <errorDisplayField>Membership_Status__c</errorDisplayField>
+    <errorMessage>This membership cannot be reactivated. The full amount has already been refunded.</errorMessage>
+</ValidationRule>

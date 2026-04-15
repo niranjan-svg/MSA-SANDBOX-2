@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Non_Profit_Status_Notes</fullName>
+    <active>true</active>
+    <description>This verification rule works when the non profit status as Verified - Not in Good Standing and Not Verified.</description>
+    <errorConditionFormula>AND(
+  OR(
+    ISPICKVAL(Non_Profit_Status__c, &quot;Verified - Not in Good Standing&quot;),
+    ISPICKVAL(Non_Profit_Status__c, &quot;Not Verified&quot;)
+  ),
+  LEN(Non_Profit_Status_Verification_Notes__c) = 0
+)</errorConditionFormula>
+    <errorDisplayField>Non_Profit_Status_Verification_Notes__c</errorDisplayField>
+    <errorMessage>Please provide a reason for the selected non-profit status.</errorMessage>
+</ValidationRule>

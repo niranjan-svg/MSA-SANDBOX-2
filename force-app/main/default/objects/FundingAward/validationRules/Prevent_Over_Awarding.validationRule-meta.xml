@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_Over_Awarding</fullName>
+    <active>true</active>
+    <description>Prevents the Funding Award Amount from exceeding the Current Available Fund of the related Budget.</description>
+    <errorConditionFormula>AND(
+    NOT(ISBLANK(BudgetId)),
+    Amount &gt; Budget.Current_Available_Fund__c
+)</errorConditionFormula>
+    <errorMessage>The Funding Award amount cannot be greater than the current available funds in the budget.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Engagement dans le programme</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Engagements dans le programme</value>
+    </caseValues>
+    <gender>Masculine</gender>
+    <nameFieldLabel>Nom de l&apos;engagement dans le programme</nameFieldLabel>
+    <startsWith>Vowel</startsWith>
+</CustomObjectTranslation>

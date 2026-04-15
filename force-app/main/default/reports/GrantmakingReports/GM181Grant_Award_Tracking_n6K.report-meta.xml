@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>FundingAward$Name</field>
+    </columns>
+    <columns>
+        <field>FundingAward$Program</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>FundingAward$Amount</field>
+    </columns>
+    <columns>
+        <field>FundingAward$FundingOpportunity</field>
+    </columns>
+    <columns>
+        <field>FundingAward$Awardee</field>
+    </columns>
+    <columns>
+        <field>FundingAward$IndividualApplication</field>
+    </columns>
+    <columns>
+        <field>FundingAward$DecisionDate</field>
+    </columns>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>FundingAward$Status</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>GM-1.8.1Grant Award Tracking</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Funding_Awards__c</reportType>
+    <scope>user</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>FundingAward$CreatedDate</dateColumn>
+        <interval>INTERVAL_CURRENT</interval>
+    </timeFrameFilter>
+</Report>

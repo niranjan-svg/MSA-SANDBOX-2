@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Spending_Period_Ended_Yesterday__c</fullName>
+    <formula>DATEVALUE(EndDate) = TODAY() - 1</formula>
+    <label>Spending Period Ended Yesterday</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

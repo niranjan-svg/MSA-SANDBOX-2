@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Copy_1_of_Send_Membership_Activation_Email</name>
+        <label>Send Membership Activation Email</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>recipientAddresses</name>
+            <value>
+                <collectionElements>
+                    <elementReference>Get_Contact_Details.Email</elementReference>
+                </collectionElements>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <inputConfiguratorMode>Custom</inputConfiguratorMode>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <inputConfiguratorMode>Custom</inputConfiguratorMode>
+                <stringValue>membership@mainstreet.org</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>composeEmailContent</name>
+            <value>
+                <stringValue>True</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <stringValue>You’ve Been Removed as an Primary Contact</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <inputConfiguratorMode>Custom</inputConfiguratorMode>
+                <stringValue>&lt;p&gt;{!primaryContactEmailBody}&lt;/p&gt;</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientId</name>
+            <value>
+                <elementReference>$Record__Prior.ContactId</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>relatedRecordId</name>
+            <value>
+                <inputConfiguratorMode>Custom</inputConfiguratorMode>
+                <stringValue></stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>logEmailOnSend</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+        <versionString>2.0.1</versionString>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_Membership_Activation_Email</name>
+        <label>Send Membership Activation Email</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>recipientAddresses</name>
+            <value>
+                <collectionElements>
+                    <elementReference>Get_Contact_Details.Email</elementReference>
+                </collectionElements>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <inputConfiguratorMode>Custom</inputConfiguratorMode>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <inputConfiguratorMode>Custom</inputConfiguratorMode>
+                <stringValue>membership@mainstreet.org</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>composeEmailContent</name>
+            <value>
+                <stringValue>True</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <stringValue>You’ve Been Removed as an Organizational Contact</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <inputConfiguratorMode>Custom</inputConfiguratorMode>
+                <stringValue>&lt;p&gt;{!emailBodyContent}&lt;/p&gt;</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientId</name>
+            <value>
+                <elementReference>$Record__Prior.ContactId</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>relatedRecordId</name>
+            <value>
+                <inputConfiguratorMode>Custom</inputConfiguratorMode>
+                <stringValue></stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>logEmailOnSend</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+        <versionString>2.0.1</versionString>
+    </actionCalls>
+    <apiVersion>65.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Check_Prior_Values</name>
+        <label>Check Prior Values</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Admin_or_Member</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record__Prior.Roles</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Admin</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior.Roles</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Sub-Member</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior.Roles</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Primary Contact</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Account_and_Membership_Details</targetReference>
+            </connector>
+            <label>Yes, Admin or Member or PC</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_Roles</name>
+        <label>Check Roles</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Primary_Contact</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record__Prior.Roles</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Primary Contact</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_1_of_Send_Membership_Activation_Email</targetReference>
+            </connector>
+            <label>Primary Contact</label>
+        </rules>
+        <rules>
+            <name>Sub_Member_or_Admin</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record__Prior.Roles</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Sub-Member</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior.Roles</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Admin</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Membership_Activation_Email</targetReference>
+            </connector>
+            <label>Sub-Member or Admin</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <interviewLabel>ACR - Send Sub Member Removal Email {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>ACR - Send Sub Member Removal Email</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Account_and_Membership_Details</name>
+        <label>Get Account and Membership Details</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Contact_Details</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Account</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Contact_Details</name>
+        <label>Get Contact Details</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_Roles</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.ContactId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Contact</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Check_Prior_Values</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Roles</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>AccountContactRelation</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>emailBodyContent</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;table class=&quot;ql-table-blob&quot; style=&quot;margin: 0 auto; width: 100%; max-width: 600px; background-color: #ffffff; font-size: 14px; color: #333333; border-spacing: 0; border-radius: 8px; overflow: hidden;&quot; width=&quot;100%&quot;&gt;
+	&lt;tbody&gt;
+		&lt;tr&gt;
+			&lt;td style=&quot;padding: 20px; background-color: #ffffff; text-align: center;&quot;&gt;&lt;a href=&quot;https://www.mainstreet.org/&quot;&gt;&lt;img alt=&quot;Main Street America Logo&quot; src=&quot;https://cdn.mainstreet.org/logos/msa-logo.png&quot; style=&quot;max-width: 200px; border: 0;&quot; width=&quot;200&quot;/&gt;&lt;/a&gt;&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td class=&quot;content&quot; style=&quot;padding: 30px 40px; text-align: left;&quot;&gt;
+
+			&lt;p style=&quot;line-height: 1.6; margin: 0 0 20px 0;&quot;&gt;Hi {!Get_Contact_Details.FirstName},&lt;/p&gt;
+
+			&lt;p&gt;We wanted to let you know {!Get_Account_and_Membership_Details.Name} has removed you as an organizational contact, and you will no longer have access to their MSA member benefits. Don’t worry, we’ll keep your account so you can access your records, start a new membership, or transfer to a new organization if needed.&amp;nbsp;&lt;/p&gt;
+
+			&lt;p&gt;&lt;strong&gt;Please note: you can still use this account to access Main Street Academy courses! Make sure to update your email address with us to maintain access and continue your learning journey progress. &amp;nbsp;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;If you need help updating your account, just let us know. We’re here to help! &amp;nbsp;&lt;/p&gt;
+			
+			Questions? Don&apos;t hesitate to &lt;a href=&quot;https://mainstreet.org/about/contact-us&quot;&gt;contact us&lt;/a&gt;.&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td class=&quot;footer&quot; style=&quot;background-color: #333333; color: #bbbbbb; padding: 20px 40px; text-align: center; font-size: 12px;&quot;&gt;
+			&lt;p style=&quot;line-height: 1.6; margin: 0 0 10px 0;&quot;&gt;Main Street America&lt;br&gt;
+			53 W. Jackson Blvd., Suite 350, Chicago, IL 60604&lt;/p&gt;
+
+			&lt;p style=&quot;line-height: 1.6; margin: 0;&quot;&gt;&lt;a href=&quot;https://members.msa.preview.rygn.io/my-account/settings&quot; style=&quot;color: #ffffff; text-decoration: underline;&quot;&gt;Update Subscription Preferences&lt;/a&gt; | &lt;a href=&quot;https://mainstreet.org/about/contact-us&quot; style=&quot;color: #ffffff; text-decoration: underline;&quot;&gt;Contact Us&lt;/a&gt;&lt;/p&gt;
+			&lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>primaryContactEmailBody</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;table class=&quot;ql-table-blob&quot; style=&quot;margin: 0 auto; width: 100%; max-width: 600px; background-color: #ffffff; font-size: 14px; color: #333333; border-spacing: 0; border-radius: 8px; overflow: hidden;&quot; width=&quot;100%&quot;&gt;
+	&lt;tbody&gt;
+		&lt;tr&gt;
+			&lt;td style=&quot;padding: 20px; background-color: #ffffff; text-align: center;&quot;&gt;&lt;a href=&quot;https://www.mainstreet.org/&quot;&gt;&lt;img alt=&quot;Main Street America Logo&quot; src=&quot;https://cdn.mainstreet.org/logos/msa-logo.png&quot; style=&quot;max-width: 200px; border: 0;&quot; width=&quot;200&quot;/&gt;&lt;/a&gt;&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td class=&quot;content&quot; style=&quot;padding: 30px 40px; text-align: left;&quot;&gt;
+
+			&lt;p style=&quot;line-height: 1.6; margin: 0 0 20px 0;&quot;&gt;Hi {!Get_Contact_Details.FirstName},&lt;/p&gt;
+
+			&lt;p&gt;We wanted to let you know {!Get_Account_and_Membership_Details.Name} has removed you as a primary contact, and you will no longer have access to their MSA member benefits. Don’t worry, we’ll keep your account so you can access your records, start a new membership, or transfer to a new organization if needed.&amp;nbsp;&lt;/p&gt;
+
+			&lt;p&gt;&lt;strong&gt;Please note: you can still use this account to access Main Street Academy courses! Make sure to update your email address with us to maintain access and continue your learning journey progress. &amp;nbsp;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;If you need help updating your account, just let us know. We’re here to help! &amp;nbsp;&lt;/p&gt;
+			
+			Questions? Don&apos;t hesitate to &lt;a href=&quot;https://mainstreet.org/about/contact-us&quot;&gt;contact us&lt;/a&gt;.&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td class=&quot;footer&quot; style=&quot;background-color: #333333; color: #bbbbbb; padding: 20px 40px; text-align: center; font-size: 12px;&quot;&gt;
+			&lt;p style=&quot;line-height: 1.6; margin: 0 0 10px 0;&quot;&gt;Main Street America&lt;br&gt;
+			53 W. Jackson Blvd., Suite 350, Chicago, IL 60604&lt;/p&gt;
+
+			&lt;p style=&quot;line-height: 1.6; margin: 0;&quot;&gt;&lt;a href=&quot;https://members.msa.preview.rygn.io/my-account/settings&quot; style=&quot;color: #ffffff; text-decoration: underline;&quot;&gt;Update Subscription Preferences&lt;/a&gt; | &lt;a href=&quot;https://mainstreet.org/about/contact-us&quot; style=&quot;color: #ffffff; text-decoration: underline;&quot;&gt;Contact Us&lt;/a&gt;&lt;/p&gt;
+			&lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</text>
+    </textTemplates>
+</Flow>

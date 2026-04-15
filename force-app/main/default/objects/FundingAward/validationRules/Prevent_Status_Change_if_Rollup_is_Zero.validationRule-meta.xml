@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_Status_Change_if_Rollup_is_Zero</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+  OR(
+    ISPICKVAL( Status , &quot;Completed&quot;),
+    ISPICKVAL( Status , &quot;Active&quot;)
+  ),
+   Required_Documents_Pending__c &lt;&gt; 0
+)</errorConditionFormula>
+    <errorMessage>You must upload all required documents before you can change the status to &apos;Active&apos; or &apos;Completed&apos;.</errorMessage>
+</ValidationRule>

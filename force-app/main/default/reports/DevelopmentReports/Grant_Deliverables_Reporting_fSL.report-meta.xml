@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>DocumentChecklistItem$Name</field>
+    </columns>
+    <columns>
+        <field>DocumentChecklistItem$Account</field>
+    </columns>
+    <columns>
+        <field>DocumentChecklistItem$CreatedDate</field>
+    </columns>
+    <columns>
+        <field>DocumentChecklistItem$Due_Date__c</field>
+    </columns>
+    <columns>
+        <field>DocumentChecklistItem$Instruction</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>DocumentChecklistItem$IsRequired</field>
+    </columns>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>DocumentChecklistItem$Status</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Grant Deliverables Report</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>document_checklist_item__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>DocumentChecklistItem$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

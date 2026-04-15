@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Make_the_Membership_InActive_if_Refunded</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+  TEXT(Membership_Status__c) = &quot;Refunded&quot;,
+  Is_Active__c = TRUE
+)</errorConditionFormula>
+    <errorMessage>Cannot mark membership as Refunded while it is still active. Please uncheck the &quot;Is Active&quot; checkbox before setting the status to Refunded.</errorMessage>
+</ValidationRule>

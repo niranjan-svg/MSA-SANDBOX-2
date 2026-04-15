@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>lenin.t@kloudserv.ca</contactEmail>
+    <label>Craft_CMS_Integration</label>
+    <oauthConfig>
+        <callbackUrl>https://test.salesforce.com/services/oauth2/success</callbackUrl>
+        <certificate>MIID8zCCAtugAwIBAgIUWWg+5mcdBqKpNAIPeCK7xt7pnCIwDQYJKoZIhvcNAQELBQAwgaExCzAJBgNVBAYTAlVTMQswCQYDVQQIDAJOQTELMAkGA1UEBwwCTkExHDAaBgNVBAoME01haW4gU3RyZWV0IEFtZXJpY2ExDTALBgNVBAsMBEFwcHMxJDAiBgNVBAMMG01TQSBXZWJzaXRlIEpXVCBJbnRlZ3JhdGlvbjElMCMGCSqGSIb3DQEJARYWd2Vic2l0ZUBtYWluc3RyZWV0Lm9yZzAeFw0yNTA5MjQxNTAzNTlaFw0yODA5MjMxNTAzNTlaMIGhMQswCQYDVQQGEwJVUzELMAkGA1UECAwCTkExCzAJBgNVBAcMAk5BMRwwGgYDVQQKDBNNYWluIFN0cmVldCBBbWVyaWNhMQ0wCwYDVQQLDARBcHBzMSQwIgYDVQQDDBtNU0EgV2Vic2l0ZSBKV1QgSW50ZWdyYXRpb24xJTAjBgkqhkiG9w0BCQEWFndlYnNpdGVAbWFpbnN0cmVldC5vcmcwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC7XfDFTbQQhn6T0pMkPweSCLV+xOYC2Vu6E68WNKwZy2G1zKZG1TLpH+ZCA82AXInuoy2kfnjRvzOgT2rLIxWiVJQQxxINtnxCMSPN/oIjZ+R3pK7d5ktUac9XV7rZOgtJ2XdnK4+8POyRJoUhWJpNRaIYRiO2ftWT4NM3ojWrQHVcJqkVxCHPFUU+s792K/GflauVJP6Wq6UyrdQ/97CKhZKzoCZcXspVr09KTOYCz9jGSfdD1QBFBrwa6hIqzIxY7QOnFlcIOvB33Ew05frEYqgcCBRbhjuBKQqQuIpFQBZNU96UzFAHVGuKewjPpHKUamSGYyVHb40qmz/vyu9DAgMBAAGjITAfMB0GA1UdDgQWBBTb94PxNNimvrbYPPUmJ0CkgcdATzANBgkqhkiG9w0BAQsFAAOCAQEARyx+xJCgSsgTQ33DOn9+X7gn4cfEJACXwDkb9bgg4tdve+WEL/B0PxP9lqCYeTQe2NYld2eTLMhWmBcFhv1MrLcVXLslu4XorXZ4FctetZBlrG6gl5L9olIwvSLoxGvtT27+jfzLS0mdnUaDizT51V3UQmlyWq5ZKNSp3yQudrPt1ntjKU150lY6AKVqf8ni0p4lUQ5KAOVgkKsSfZjkZBdzDheTLXKkFswip/eWFh21p0PwKl4+RZcLJEGSJZ3/0xXvm6CF4lBpnT+cZ6Fb3WZFjBJm+smkoNK99RKrrr7Dg5CFQKv1ISJUraXJWH/JM1WQSnvtdcZhvLqk4IDhrA==</certificate>
+        <consumerKey>3MVG9C4.RfqMpNUTJLOOfqZmsc.8i8NbKgHresbRfSX9hTVToJq7B7lvF2QnUgbkJVdRGpg177aMPJPJaOEPB</consumerKey>
+        <isAdminApproved>true</isAdminApproved>
+        <isClientCredentialEnabled>true</isClientCredentialEnabled>
+        <isCodeCredentialEnabled>false</isCodeCredentialEnabled>
+        <isCodeCredentialPostOnly>false</isCodeCredentialPostOnly>
+        <isConsumerSecretOptional>true</isConsumerSecretOptional>
+        <isIntrospectAllTokens>false</isIntrospectAllTokens>
+        <isNamedUserJwtEnabled>false</isNamedUserJwtEnabled>
+        <isPkceRequired>false</isPkceRequired>
+        <isRefreshTokenRotationEnabled>false</isRefreshTokenRotationEnabled>
+        <isSecretRequiredForRefreshToken>false</isSecretRequiredForRefreshToken>
+        <isSecretRequiredForTokenExchange>false</isSecretRequiredForTokenExchange>
+        <isTokenExchangeEnabled>false</isTokenExchangeEnabled>
+        <oauthClientCredentialUser>lenin.t@kloudserv.ca.msadev</oauthClientCredentialUser>
+        <scopes>Api</scopes>
+        <scopes>RefreshToken</scopes>
+    </oauthConfig>
+    <oauthPolicy>
+        <ipRelaxation>BYPASS</ipRelaxation>
+        <isTokenExchangeFlowEnabled>false</isTokenExchangeFlowEnabled>
+        <refreshTokenPolicy>zero</refreshTokenPolicy>
+    </oauthPolicy>
+    <profileName>Membership Team</profileName>
+    <profileName>Program Team</profileName>
+    <profileName>System Administrator</profileName>
+</ConnectedApp>

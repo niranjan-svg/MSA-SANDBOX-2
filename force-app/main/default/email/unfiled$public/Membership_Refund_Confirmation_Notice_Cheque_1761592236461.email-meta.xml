@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>This email template is used to notify the members about the Membership Refund Confirmation</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Membership Refund Confirmation Notice - Cheque</name>
+    <relatedEntityType>Membership_Transaction__c</relatedEntityType>
+    <style>none</style>
+    <subject>Your Refund is in Progress</subject>
+    <type>custom</type>
+    <uiType>SFX</uiType>
+</EmailTemplate>

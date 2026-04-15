@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Local_Program__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>Local Program</label>
+    <lookupFilter>
+        <active>true</active>
+        <errorMessage>The selected Account should be a Local Program</errorMessage>
+        <filterItems>
+            <field>Account.Program_Type__c</field>
+            <operation>equals</operation>
+            <value>Local Program</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Program Relationships (Local Program)</relationshipLabel>
+    <relationshipName>Program_Relationships1</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,162 @@
+<apex:page standardController="Invoice__c" extensions="MembershipInvoicePDFController" renderAs="pdf">
+    <head>
+        <style type="text/css">
+            @page {
+                size: A4;
+                margin: 1.2cm;
+            }
+            body {
+                font-family: 'Helvetica', 'Arial', sans-serif;
+                font-size: 10pt;
+                color: #333333;
+                line-height: 1.3;
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+    </head>
+    <body>
+
+        <!-- ======== HEADER: LOGO and INVOICE TITLE ======== -->
+        <div style="width: 100%; margin-bottom: 25px; padding-bottom: 15px; border-bottom: 2px solid #dddddd;">
+            <table style="width: 100%; border-spacing: 0; border-collapse: collapse;">
+                <tr>
+                    <td style="width: 55%; vertical-align: middle; padding: 0;">
+                        <img src="{!$Resource.MSALogo}" alt="Main Street America Logo" style="max-width: 250px; height: auto;" />
+                    </td>
+                    <td style="width: 45%; text-align: right; vertical-align: middle; padding: 0;">
+                        <div style="font-size: 48pt; font-weight: bold; color: #777777; letter-spacing: 3px; margin: 0; font-family: 'Arial', sans-serif;">RECEIPT</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- ======== ADDRESSES: ISSUED TO and PAY TO ======== -->
+        <div style="width: 100%; margin-bottom: 25px;">
+            <table style="width: 100%; border-spacing: 0; border-collapse: collapse;">
+                <tr>
+                    <td style="width: 48%; vertical-align: top; padding-right: 20px;">
+                        <div style="font-size: 11pt; font-weight: bold; color: #333333; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px;font-family: 'Arial', sans-serif;">ISSUED TO</div>
+                        <div style="font-size: 10pt; line-height: 1.4; color: #555555; padding: 5px 0;">
+                            <!-- Conditionally render Company Name only if it's NOT a Person Account -->
+                           <!-- Panel for ORGANIZATION Accounts -->
+                            <!--<apex:outputPanel rendered="{!invoice.Bill_To_Account__r.IsPersonAccount == false}">
+                                <div style="font-weight: bold; margin-bottom: 3px;font-family: 'Arial', sans-serif;">{!invoice.Bill_To_Account__r.Primary_Contact__r.Name}</div>
+                                 <div style="font-weight: bold; margin-bottom: 3px;font-family: 'Arial', sans-serif;">{!invoice.Bill_To_Account__r.Name}</div>
+                                <div style="font-weight: bold; margin-bottom: 3px;font-family: 'Arial', sans-serif;">{!invoice.Bill_To_Account__r.Primary_Contact__r.MailingStreet}</div>
+                                <div style="font-weight: bold; margin-bottom: 3px;font-family: 'Arial', sans-serif;">{!invoice.Bill_To_Account__r.Primary_Contact__r.MailingCity}, {!invoice.Bill_To_Account__r.Primary_Contact__r.MailingState} {!invoice.Bill_To_Account__r.Primary_Contact__r.MailingPostalCode}</div>
+                                <div style="font-weight: bold; margin-bottom: 3px;font-family: 'Arial', sans-serif;">{!invoice.Bill_To_Account__r.Primary_Contact__r.MailingCountry}</div>
+                            </apex:outputPanel>
+                            
+                            <!-- Panel for PERSON Accounts -->
+                            <!--<apex:outputPanel rendered="{!invoice.Bill_To_Account__r.IsPersonAccount == true}">
+                                <div style="font-weight: bold; margin-bottom: 3px;font-family: 'Arial', sans-serif;">{!invoice.Bill_To_Account__r.Name}</div>
+                                <div style="font-family: 'Arial', sans-serif;">{!invoice.Bill_To_Account__r.BillingStreet}</div>
+                                <div style="font-family: 'Arial', sans-serif;">{!invoice.Bill_To_Account__r.BillingCity}, {!invoice.Bill_To_Account__r.BillingState} {!invoice.Bill_To_Account__r.BillingPostalCode}</div>
+                                <div style="font-family: 'Arial', sans-serif;">{!invoice.Bill_To_Account__r.BillingCountry}</div>
+                            </apex:outputPanel>-->
+                            <div style="font-weight: bold; margin-bottom: 3px; font-family: 'Arial', sans-serif;">{!issuedToName}</div>
+                            <apex:outputPanel rendered="{!isIssuedToPersonAccount == false}">
+                                <div style="font-family: 'Arial', sans-serif; margin-bottom: 3px;">{!issuedToContactName}</div>
+                            </apex:outputPanel>
+                            <div style="font-family: 'Arial', sans-serif; margin-bottom: 3px;">{!issuedToStreet}</div>
+                            <div style="font-family: 'Arial', sans-serif; margin-bottom: 3px;">{!issuedToCityStateZip}</div>
+                            <div style="font-family: 'Arial', sans-serif;">{!issuedToCountry}</div>
+                            
+                        </div>
+                    </td>
+                    <td style="width: 48%; vertical-align: top; padding-left: 20px;">
+                        <div style="font-size: 11pt; font-weight: bold; color: #333333; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px;font-family: 'Arial', sans-serif;">PAID TO</div>
+                        <div style="font-size: 10pt; line-height: 1.4; color: #555555; padding: 5px 0;">
+                            <div style="font-weight: bold; margin-bottom: 3px;font-family: 'Arial', sans-serif;">{!organizationName}</div>
+                           
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- ======== INFO: INVOICE #, DATE, DUE DATE ======== -->
+        <div style="width: 100%; margin-bottom: 25px; background-color: #f7f8f9; border: 1px solid #e1e5e9; padding: 15px; border-radius: 3px;">
+            <table style="width: 100%; border-spacing: 0; border-collapse: collapse;">
+                <tr>
+                    <td style=" font-family: 'Arial', sans-serif;font-weight: bold; color: #333333; width: 18%; padding: 3px 0; font-size: 10pt;">Receipt Number:</td>
+                    <td style="font-family: 'Arial', sans-serif;color: #555555; width: 27%; padding: 3px 0; font-size: 10pt;">{!invoice.Name}</td>
+                    <td style="font-family: 'Arial', sans-serif;font-weight: bold; color: #333333; width: 15%; padding: 3px 0; font-size: 10pt;">Date:</td>
+                    <td style="font-family: 'Arial', sans-serif;color: #555555; width: 40%; padding: 3px 0; font-size: 10pt;">{!invoiceDateFormatted}</td>
+                </tr>
+                <tr>
+                    <td style="font-family: 'Arial', sans-serif;font-weight: bold; color: #333333; padding: 3px 0; font-size: 10pt;">Transaction Date:</td>
+                    <td style="font-family: 'Arial', sans-serif;color: #555555; padding: 3px 0; font-size: 10pt;">{!transactionDate}</td>
+                    <td style="font-family: 'Arial', sans-serif;font-weight: bold; color: #333333; padding: 3px 0; font-size: 10pt;">Payment Type:</td>
+                    <td style="font-family: 'Arial', sans-serif;color: #555555; padding: 3px 0; font-size: 10pt;">{!paymentType}</td>
+                    <td colspan="2"></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- ======== LINE ITEMS TABLE ======== -->
+        <div style="width: 100%; margin-bottom: 20px;">
+            <table style="width: 100%; border-collapse: collapse; border: 1px solid #d1d5db;">
+                <thead>
+                    <tr>
+                        <th style="font-family: 'Arial', sans-serif;background-color: #374151; color: #ffffff; font-weight: bold; padding: 10px 8px; text-align: left; font-size: 10pt; border-right: 1px solid #4b5563;">Membership Level</th>
+                        <th style="font-family: 'Arial', sans-serif;background-color: #374151; color: #ffffff; font-weight: bold; padding: 10px 8px; text-align: left; font-size: 10pt; border-right: 1px solid #4b5563;">Billed For</th>
+                        <th style="font-family: 'Arial', sans-serif;background-color: #374151; color: #ffffff; font-weight: bold; padding: 10px 8px; text-align: center; font-size: 10pt; border-right: 1px solid #4b5563;">Quantity</th>
+						<th style="font-family: 'Arial', sans-serif;background-color: #374151; color: #ffffff; font-weight: bold; padding: 10px 8px; text-align: right; font-size: 10pt; border-right: 1px solid #4b5563;">Unit Price</th>
+                        <th style="font-family: 'Arial', sans-serif;background-color: #374151; color: #ffffff; font-weight: bold; padding: 10px 8px; text-align: right; font-size: 10pt; border-right: 1px solid #4b5563;">Term</th>
+                        <th style="font-family: 'Arial', sans-serif;background-color: #374151; color: #ffffff; font-weight: bold; padding: 10px 8px; text-align: right; font-size: 10pt;">Line Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <apex:repeat value="{!lineItems}" var="line">
+                        <tr>
+                            <td style="font-family: 'Arial', sans-serif;padding: 10px 8px; border-bottom: 1px solid #e5e7eb; border-right: 1px solid #e5e7eb; font-size: 10pt; color: #374151;">{!line.Product__r.Name}</td>
+                            <td style="font-family: 'Arial', sans-serif;padding: 10px 8px; border-bottom: 1px solid #e5e7eb; border-right: 1px solid #e5e7eb; font-size: 10pt; color: #374151;">{!line.Billed_For_Account__r.Name}</td>
+                            <td style="font-family: 'Arial', sans-serif;padding: 10px 8px; border-bottom: 1px solid #e5e7eb; border-right: 1px solid #e5e7eb; font-size: 10pt; text-align: center; color: #374151;">
+                                <apex:outputText value="{0, number, ###,##0}">
+                                    <apex:param value="{!line.Quantity__c}"/>
+                                </apex:outputText>
+                            </td>
+                            <td style="font-family: 'Arial', sans-serif;padding: 10px 8px; border-bottom: 1px solid #e5e7eb; border-right: 1px solid #e5e7eb; font-size: 10pt; text-align: right; color: #374151;">
+                                <apex:outputText value="{0, number, $###,##0.00}">
+                                    <apex:param value="{!line.Unit_Price__c}"/>
+                                </apex:outputText>
+                            </td>
+                            <td style="font-family: 'Arial', sans-serif;padding: 10px 8px; border-bottom: 1px solid #e5e7eb; border-right: 1px solid #e5e7eb; font-size: 10pt; color: #374151;">{!term}</td>
+                            <td style="font-family: 'Arial', sans-serif;padding: 10px 8px; border-bottom: 1px solid #e5e7eb; font-size: 10pt; text-align: right; color: #374151; font-weight: 600;">
+                                <apex:outputText value="{0, number, $###,##0.00}">
+                                    <apex:param value="{!line.Line_Total__c}"/>
+                                </apex:outputText>
+                            </td>
+                        </tr>
+                    </apex:repeat>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ======== TOTALS ======== -->
+        <div style="width: 100%; margin-top: 15px;">
+            <table style="width: 100%; border-spacing: 0; border-collapse: collapse;">
+                <tr>
+                    <td style="width: 60%;"></td>
+                    <td style="width: 40%;">
+                        <div style="background-color: #6b7280; color: #ffffff; padding: 12px 15px; text-align: center; border-radius: 3px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                            <table style="width: 100%; border-spacing: 0; border-collapse: collapse;">
+                                <tr>
+                                    <td style="font-family: 'Arial', sans-serif;font-weight: bold; font-size: 14pt; text-align: left; color: #ffffff;">Total Amount Paid:</td>
+                                    <td style="font-family: 'Arial', sans-serif;font-weight: bold; font-size: 14pt; text-align: right; color: #ffffff;">
+                                        <apex:outputText value="{0, number, $###,##0.00}">
+                                            <apex:param value="{!invoice.Invoice_Amount__c}"/>
+                                        </apex:outputText>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+    </body>
+</apex:page>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Craft_Site_Membership__c</fullName>
+    <label>Craft Site Membership</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>academy</fullName>
+                <default>false</default>
+                <label>academy</label>
+            </value>
+            <value>
+                <fullName>smallBusinessHub</fullName>
+                <default>false</default>
+                <label>smallBusinessHub</label>
+            </value>
+            <value>
+                <fullName>memberHub</fullName>
+                <default>false</default>
+                <label>memberHub</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>
