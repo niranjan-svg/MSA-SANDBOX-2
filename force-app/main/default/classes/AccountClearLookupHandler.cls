@@ -1,6 +1,6 @@
 public class AccountClearLookupHandler {
     public static Boolean isProcessing = false;
-    
+    // comment for testing git
     public static void clearAccountReferences(Set<Id> accountIds) {
         
         List<SObject> recordsToUpdate = new List<SObject>();
